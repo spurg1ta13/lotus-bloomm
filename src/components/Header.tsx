@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Phone } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n";
 import { LanguageToggle } from "./LanguageToggle";
 import logo from "@/assets/logo.png";
@@ -6,24 +7,31 @@ import logo from "@/assets/logo.png";
 export function Header() {
   const { t } = useI18n();
   const links = [
-    { href: "#home", label: t("nav_home") },
-    { href: "#about", label: t("nav_about") },
-    { href: "#services", label: t("nav_services") },
-    { href: "#contact", label: t("nav_contact") },
+    { href: "/#home", label: t("nav_home") },
+    { href: "/#about", label: t("nav_about") },
+    { href: "/#services", label: t("nav_services") },
+    { href: "/gallery", label: t("nav_gallery"), internal: true },
+    { href: "/#contact", label: t("nav_contact") },
   ];
   return (
     <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2" aria-label="Lotus Bloom Nails & More">
+        <Link to="/" className="flex items-center gap-2" aria-label="Lotus Bloom Nails & More">
           <img src={logo} alt="Lotus Bloom" className="h-10 w-auto" width={40} height={40} />
           <span className="font-display text-xl font-bold tracking-tight italic hidden sm:inline">Lotus Bloom</span>
-        </a>
+        </Link>
         <div className="hidden md:flex items-center gap-8 text-[11px] uppercase tracking-[0.2em] font-medium text-muted-foreground">
-          {links.map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-foreground transition-colors">
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) =>
+            l.internal ? (
+              <Link key={l.href} to={l.href} className="hover:text-foreground transition-colors">
+                {l.label}
+              </Link>
+            ) : (
+              <a key={l.href} href={l.href} className="hover:text-foreground transition-colors">
+                {l.label}
+              </a>
+            ),
+          )}
         </div>
         <div className="flex items-center gap-4">
           <a
