@@ -29,6 +29,7 @@ export function Header() {
     { href: "/#contact", label: t("nav_contact") },
   ];
   return (
+    <>
     <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2" aria-label="Lotus Bloom Nails & More">
@@ -88,6 +89,7 @@ export function Header() {
           </button>
         </div>
       </div>
+    </nav>
 
       {/* Mobile / tablet menu */}
       <div
@@ -150,6 +152,6 @@ export function Header() {
           </div>
         </div>
       </div>
-    </nav>
+    </>
   );
 }
