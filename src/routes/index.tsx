@@ -140,9 +140,6 @@ function Index() {
                 </div>
                 <div className="flex items-center gap-8">
                   <span className="font-mono text-xl tracking-tighter text-accent">{s.price}</span>
-                  <div className="size-12 rounded-full border border-border flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-all">
-                    →
-                  </div>
                 </div>
               </div>
             ))}
