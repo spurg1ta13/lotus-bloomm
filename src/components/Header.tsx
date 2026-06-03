@@ -1,4 +1,4 @@
-import { Instagram, Phone } from "lucide-react";
+import { Instagram, Facebook, Phone } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { LanguageToggle } from "./LanguageToggle";
 import logo from "@/assets/logo.png";
@@ -42,6 +42,15 @@ export function Header() {
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             <Instagram className="h-4 w-4" strokeWidth={1.5} />
+          </a>
+          <a
+            href="https://www.facebook.com/p/Lotus-Bloom-nailsmore-61584502558088/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Facebook className="h-4 w-4" strokeWidth={1.5} />
           </a>
           <LanguageToggle />
         </div>
