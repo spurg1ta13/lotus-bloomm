@@ -52,7 +52,7 @@ function Index() {
       <Header />
 
       {/* Hero */}
-      <header id="home" className="relative pt-24 pb-32 px-6 overflow-hidden">
+      <header id="home" className="relative pt-16 pb-20 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="animate-reveal">
             <span className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">
@@ -87,7 +87,7 @@ function Index() {
       </header>
 
       {/* Gallery */}
-      <section id="gallery" className="py-32 px-6">
+      <section id="gallery" className="py-16 md:py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16 animate-reveal">
             <span className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">
@@ -102,7 +102,7 @@ function Index() {
       </section>
 
       {/* About */}
-      <section id="about" className="py-32 px-6 bg-foreground/5">
+      <section id="about" className="py-16 md:py-20 px-6 bg-foreground/5">
         <div className="max-w-4xl mx-auto text-center animate-reveal">
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent block mb-6">
             {t("about_kicker")}
@@ -117,7 +117,7 @@ function Index() {
       </section>
 
       {/* Services */}
-      <section id="services" className="py-32 px-6">
+      <section id="services" className="py-16 md:py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-end mb-16 border-b border-border pb-8">
             <h2 className="font-display text-5xl italic">{t("services_title")}</h2>
@@ -196,7 +196,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 px-6">
+    <section id="contact" className="py-16 md:py-20 px-6">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 mb-16">
         <div>
           <h2 className="font-display text-5xl mb-8 italic text-balance">{t("contact_title")}</h2>
