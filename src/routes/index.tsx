@@ -168,7 +168,7 @@ function Index() {
           <a
             href="https://devcraft.gr"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="underline underline-offset-4 hover:text-foreground transition-colors"
           >
             devcraft.gr
