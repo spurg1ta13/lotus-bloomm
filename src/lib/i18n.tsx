@@ -58,6 +58,9 @@ export const translations: Translations = {
     gallery_kicker: "Our Work",
     gallery_heading: "A glimpse into our craft.",
     gallery_lede: "Hand-picked moments from our studio — each set sculpted, painted and polished with care.",
+    gallery_cta: "View Full Gallery",
+    home_gallery_kicker: "Gallery",
+    home_gallery_title: "Recent work, freshly polished.",
   },
   gr: {
     nav_home: "Αρχική",
@@ -111,6 +114,9 @@ export const translations: Translations = {
     gallery_kicker: "Η Δουλειά μας",
     gallery_heading: "Μια ματιά στην τέχνη μας.",
     gallery_lede: "Επιλεγμένες στιγμές από το studio μας — κάθε set σχεδιασμένο, ζωγραφισμένο και γυαλισμένο με αγάπη.",
+    gallery_cta: "Δείτε όλη τη γκαλερί",
+    home_gallery_kicker: "Γκαλερί",
+    home_gallery_title: "Πρόσφατες δημιουργίες, φρεσκογυαλισμένες.",
   },
 };
 
