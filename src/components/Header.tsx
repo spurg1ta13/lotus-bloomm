@@ -1,3 +1,4 @@
+import { Instagram, Phone } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { LanguageToggle } from "./LanguageToggle";
 
@@ -22,7 +23,26 @@ export function Header() {
             </a>
           ))}
         </div>
-        <LanguageToggle />
+        <div className="flex items-center gap-4">
+          <a
+            href="tel:+302313052391"
+            aria-label="Call +30 2313 052391"
+            className="hidden sm:inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Phone className="h-4 w-4" strokeWidth={1.5} />
+            <span className="hidden lg:inline">2313 052391</span>
+          </a>
+          <a
+            href="https://www.instagram.com/lotusbloom_nails.and.more"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Instagram className="h-4 w-4" strokeWidth={1.5} />
+          </a>
+          <LanguageToggle />
+        </div>
       </div>
     </nav>
   );
