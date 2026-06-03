@@ -146,6 +146,20 @@ function Index() {
         </div>
       </footer>
 
+      <div className="py-4 px-6 border-t border-border bg-foreground/5">
+        <div className="max-w-7xl mx-auto text-center font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+          Powered by{" "}
+          <a
+            href="https://devcraft.gr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 hover:text-foreground transition-colors"
+          >
+            devcraft.gr
+          </a>
+        </div>
+      </div>
+
       <CookieBanner />
     </div>
   );
