@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import {
   Carousel,
@@ -43,6 +44,7 @@ export function GalleryCarousel({
           a.on("select", () => setCurrent(a.selectedScrollSnap()));
         }}
       >
+        <div className="relative">
         <CarouselContent>
           {galleryImages.map((im, i) => (
             <CarouselItem key={im.src}>
@@ -61,6 +63,23 @@ export function GalleryCarousel({
             </CarouselItem>
           ))}
         </CarouselContent>
+          <button
+            type="button"
+            aria-label="Previous image"
+            onClick={() => api?.scrollPrev()}
+            className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 z-10 inline-flex items-center justify-center h-11 w-11 rounded-full bg-background/80 backdrop-blur-sm border border-border text-foreground hover:bg-foreground hover:text-background transition-all shadow-sm"
+          >
+            <ChevronLeft className="h-5 w-5" strokeWidth={1.5} />
+          </button>
+          <button
+            type="button"
+            aria-label="Next image"
+            onClick={() => api?.scrollNext()}
+            className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 z-10 inline-flex items-center justify-center h-11 w-11 rounded-full bg-background/80 backdrop-blur-sm border border-border text-foreground hover:bg-foreground hover:text-background transition-all shadow-sm"
+          >
+            <ChevronRight className="h-5 w-5" strokeWidth={1.5} />
+          </button>
+        </div>
       </Carousel>
 
       <div className="mt-8 flex items-center justify-center gap-3">
