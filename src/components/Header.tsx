@@ -131,7 +131,7 @@ export function Header() {
               </a>
             ),
           )}
-          <div className="pt-8 mt-4 border-t border-border flex items-center gap-6 text-muted-foreground">
+          <div className="pt-8 mt-4 border-t border-border flex items-center justify-center gap-6 text-muted-foreground">
             <a
               href="tel:+302313052391"
               aria-label="Call +30 2313 052391"
@@ -141,7 +141,7 @@ export function Header() {
               2313 052391
             </a>
           </div>
-          <div className="flex items-center gap-6 text-muted-foreground">
+          <div className="flex items-center justify-center gap-6 text-muted-foreground">
             <a
               href="https://www.instagram.com/lotusbloom_nails.and.more"
               target="_blank"
