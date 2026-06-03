@@ -166,7 +166,7 @@ function Contact() {
 
   return (
     <section id="contact" className="py-32 px-6">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-24">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 mb-16">
         <div>
           <h2 className="font-display text-5xl mb-8 italic text-balance">{t("contact_title")}</h2>
           <div className="space-y-6">
@@ -247,6 +247,23 @@ function Contact() {
             </form>
           )}
         </div>
+      </div>
+      <div className="max-w-7xl mx-auto">
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Lotus+Bloom+Paraskevopoulou+15+Thessaloniki+54640"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block group rounded-sm overflow-hidden border border-border"
+          aria-label="Open Lotus Bloom on Google Maps"
+        >
+          <iframe
+            title="Lotus Bloom — Paraskevopoulou 15, Thessaloniki"
+            src="https://www.google.com/maps?q=Paraskevopoulou%2015%2C%20Thessaloniki%20546%2040&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full h-[360px] md:h-[420px] grayscale group-hover:grayscale-0 transition-all duration-500 pointer-events-none"
+          />
+        </a>
       </div>
     </section>
   );
