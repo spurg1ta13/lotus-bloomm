@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
+import { Instagram } from "lucide-react";
 import { Header } from "@/components/Header";
 import { CookieBanner } from "@/components/CookieBanner";
 import { useI18n, translations } from "@/lib/i18n";
@@ -197,9 +198,11 @@ function Contact() {
                 href="https://www.instagram.com/lotusbloom_nails.and.more"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm underline underline-offset-4 hover:text-accent transition-colors"
+                aria-label="Instagram"
+                className="inline-flex items-center gap-2 text-sm underline underline-offset-4 hover:text-accent transition-colors"
               >
-                Instagram
+                <Instagram className="h-5 w-5" strokeWidth={1.5} />
+                <span>Instagram</span>
               </a>
               <a href="mailto:hello@lotusbloom.gr" className="text-sm underline underline-offset-4 hover:text-accent transition-colors">
                 Email
