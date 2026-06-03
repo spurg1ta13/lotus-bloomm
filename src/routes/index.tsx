@@ -9,10 +9,10 @@ import heroImg from "@/assets/hero.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Lotus Bloom Nails & More — Beauty Salon in Athens" },
-      { name: "description", content: "Nails, lashes, brows and signature beauty rituals in Athens. Book your appointment at Lotus Bloom." },
+      { title: "Lotus Bloom Nails & More — Beauty Salon in Thessaloniki" },
+      { name: "description", content: "Nails, lashes, brows and signature beauty rituals in Thessaloniki. Book your appointment at Lotus Bloom." },
       { property: "og:title", content: "Lotus Bloom Nails & More" },
-      { property: "og:description", content: "Signature beauty rituals in Athens — nails, lashes, brows and more." },
+      { property: "og:description", content: "Signature beauty rituals in Thessaloniki — nails, lashes, brows and more." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
           "@type": "BeautySalon",
           name: "Lotus Bloom Nails & More",
           image: "/og-image.jpg",
-          address: { "@type": "PostalAddress", addressLocality: "Athens", addressCountry: "GR" },
+          address: { "@type": "PostalAddress", addressLocality: "Thessaloniki", addressCountry: "GR" },
           telephone: "+30 210 000 0000",
           email: "hello@lotusbloom.gr",
           sameAs: ["https://www.instagram.com/lotusbloom_nails.and.more"],

@@ -28,7 +28,7 @@ function Privacy() {
         <h2 className="font-display text-2xl text-foreground">Your rights</h2>
         <p>You may request access, rectification, or deletion of your personal data at any time by writing to hello@lotusbloom.gr.</p>
         <h2 className="font-display text-2xl text-foreground">Contact</h2>
-        <p>Lotus Bloom Nails & More — Athens, Greece — hello@lotusbloom.gr</p>
+        <p>Lotus Bloom Nails & More — Thessaloniki, Greece — hello@lotusbloom.gr</p>
       </div>
     </article>
   );
