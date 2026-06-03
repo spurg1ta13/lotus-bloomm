@@ -135,7 +135,7 @@ function Index() {
 
       <footer className="py-12 px-6 border-t border-border">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="font-display italic text-lg opacity-60">Lotus Bloom Beauty</div>
+          <div className="font-display italic text-lg opacity-60">{t("footer_brand")}</div>
           <div className="font-mono text-[10px] text-muted-foreground tracking-widest uppercase">
             © {new Date().getFullYear()} Lotus Bloom · {t("footer_rights")}
           </div>
@@ -148,7 +148,7 @@ function Index() {
 
       <div className="py-4 px-6 border-t border-border bg-foreground/5">
         <div className="max-w-7xl mx-auto text-center font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          Powered by{" "}
+          {t("footer_powered")}{" "}
           <a
             href="https://devcraft.gr"
             target="_blank"
