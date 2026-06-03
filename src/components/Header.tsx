@@ -84,7 +84,7 @@ export function Header() {
             onClick={() => setOpen((o) => !o)}
             className="lg:hidden inline-flex items-center justify-center h-9 w-9 -mr-2 text-foreground hover:text-accent transition-colors"
           >
-            {open ? <Menu className="h-5 w-5" strokeWidth={1.5} /> : <Menu className="h-5 w-5" strokeWidth={1.5} />}
+            {open ? <X className="h-5 w-5" strokeWidth={1.5} /> : <Menu className="h-5 w-5" strokeWidth={1.5} />}
           </button>
         </div>
       </div>
