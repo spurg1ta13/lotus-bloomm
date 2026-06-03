@@ -175,12 +175,21 @@ function Contact() {
             </p>
             <div className="space-y-2">
               <p className="text-xl">
-                <a href="tel:+302100000000" className="hover:text-accent transition-colors">+30 210 000 0000</a>
+                <a href="tel:+302313052391" className="hover:text-accent transition-colors">+30 231 305 2391</a>
               </p>
               <p className="text-xl">
                 <a href="mailto:hello@lotusbloom.gr" className="hover:text-accent transition-colors">hello@lotusbloom.gr</a>
               </p>
-              <p className="text-muted-foreground text-sm">{t("contact_address")}</p>
+              <p className="text-sm">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Lotus+Bloom+Paraskevopoulou+15+Thessaloniki+54640"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-accent transition-colors underline underline-offset-4"
+                >
+                  {t("contact_address")}
+                </a>
+              </p>
               <p className="text-muted-foreground text-sm">{t("contact_hours")}</p>
             </div>
             <div className="pt-8 flex gap-6">
