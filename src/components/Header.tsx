@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Instagram, Facebook, Phone, Menu, X } from "lucide-react";
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useRouterState, useNavigate } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n";
 import { LanguageToggle } from "./LanguageToggle";
 import logo from "@/assets/logo.png";
@@ -9,6 +9,17 @@ export function Header() {
   const { t } = useI18n();
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const navigate = useNavigate();
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setOpen(false);
+    if (pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate({ to: "/" }).then(() => window.scrollTo({ top: 0, behavior: "auto" }));
+    }
+  };
 
   useEffect(() => {
     setOpen(false);
@@ -32,7 +43,7 @@ export function Header() {
     <>
     <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2" aria-label="Lotus Bloom Nails & More">
+        <Link to="/" onClick={handleLogoClick} className="flex items-center gap-2" aria-label="Lotus Bloom Nails & More">
           <img src={logo} alt="Lotus Bloom" className="h-10 w-auto" width={40} height={40} />
           <span className="font-display text-xl font-bold tracking-tight italic hidden sm:inline">Lotus Bloom</span>
         </Link>
