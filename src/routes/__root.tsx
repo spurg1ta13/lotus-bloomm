@@ -81,11 +81,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Lotus Bloom Nails & More — Beauty Salon in Thessaloniki" },
       { name: "description", content: "Nails, lashes, brows and signature beauty rituals in Thessaloniki. Book your appointment at Lotus Bloom." },
       { name: "author", content: "Lotus Bloom" },
-      { property: "og:title", content: "Lotus Bloom Nails & More" },
-      { property: "og:description", content: "Signature beauty rituals in Thessaloniki — nails, lashes, brows and more." },
+      { property: "og:title", content: "Lotus Bloom Nails & More — Beauty Salon in Thessaloniki" },
+      { property: "og:description", content: "Nails, lashes, brows and signature beauty rituals in Thessaloniki. Book your appointment at Lotus Bloom." },
       { property: "og:site_name", content: "Lotus Bloom" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Lotus Bloom Nails & More — Beauty Salon in Thessaloniki" },
+      { name: "twitter:description", content: "Nails, lashes, brows and signature beauty rituals in Thessaloniki. Book your appointment at Lotus Bloom." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2bd88f6b-39da-419b-9336-95a791dec7e5/id-preview-97cb4848--5e8470cf-a216-49bb-8128-5c1df70c9541.lovable.app-1780482208143.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2bd88f6b-39da-419b-9336-95a791dec7e5/id-preview-97cb4848--5e8470cf-a216-49bb-8128-5c1df70c9541.lovable.app-1780482208143.png" },
     ],
     links: [
       {
