@@ -29,6 +29,7 @@ export function Header() {
     { href: "/#contact", label: t("nav_contact") },
   ];
   return (
+    <>
     <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2" aria-label="Lotus Bloom Nails & More">
@@ -88,11 +89,12 @@ export function Header() {
           </button>
         </div>
       </div>
+    </nav>
 
       {/* Mobile / tablet menu */}
       <div
         id="mobile-menu"
-        className={`lg:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-background/95 backdrop-blur-md border-t border-border transition-all duration-300 ${
+        className={`lg:hidden fixed inset-x-0 top-16 bottom-0 z-50 bg-background border-t border-border overflow-y-auto transition-all duration-300 ${
           open ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"
         }`}
       >
@@ -150,6 +152,6 @@ export function Header() {
           </div>
         </div>
       </div>
-    </nav>
+    </>
   );
 }
