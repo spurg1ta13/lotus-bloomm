@@ -1,6 +1,7 @@
 import { Instagram, Phone } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { LanguageToggle } from "./LanguageToggle";
+import logo from "@/assets/logo.png";
 
 export function Header() {
   const { t } = useI18n();
@@ -13,8 +14,9 @@ export function Header() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#home" className="font-display text-xl font-bold tracking-tight italic">
-          Lotus Bloom
+        <a href="#home" className="flex items-center gap-2" aria-label="Lotus Bloom Nails & More">
+          <img src={logo} alt="Lotus Bloom" className="h-10 w-auto" width={40} height={40} />
+          <span className="font-display text-xl font-bold tracking-tight italic hidden sm:inline">Lotus Bloom</span>
         </a>
         <div className="hidden md:flex items-center gap-8 text-[11px] uppercase tracking-[0.2em] font-medium text-muted-foreground">
           {links.map((l) => (
