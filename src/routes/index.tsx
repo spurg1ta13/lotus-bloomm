@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { Instagram } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
 import { Header } from "@/components/Header";
 import { CookieBanner } from "@/components/CookieBanner";
 import { useI18n, translations } from "@/lib/i18n";
@@ -27,7 +27,10 @@ export const Route = createFileRoute("/")({
           address: { "@type": "PostalAddress", addressLocality: "Thessaloniki", addressCountry: "GR" },
           telephone: "+30 210 000 0000",
           email: "hello@lotusbloom.gr",
-          sameAs: ["https://www.instagram.com/lotusbloom_nails.and.more"],
+          sameAs: [
+            "https://www.instagram.com/lotusbloom_nails.and.more",
+            "https://www.facebook.com/p/Lotus-Bloom-nailsmore-61584502558088/",
+          ],
         }),
       },
     ],
@@ -217,6 +220,16 @@ function Contact() {
               >
                 <Instagram className="h-5 w-5" strokeWidth={1.5} />
                 <span>Instagram</span>
+              </a>
+              <a
+                href="https://www.facebook.com/p/Lotus-Bloom-nailsmore-61584502558088/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="inline-flex items-center gap-2 text-sm underline underline-offset-4 hover:text-accent transition-colors"
+              >
+                <Facebook className="h-5 w-5" strokeWidth={1.5} />
+                <span>Facebook</span>
               </a>
               <a href="mailto:hello@lotusbloom.gr" className="text-sm underline underline-offset-4 hover:text-accent transition-colors">
                 Email
