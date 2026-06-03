@@ -52,12 +52,15 @@ function Index() {
       <Header />
 
       {/* Hero */}
-      <header id="home" className="relative pt-16 pb-20 px-6 overflow-hidden">
+      <header id="home" className="relative pt-16 pb-24 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="animate-reveal">
-            <span className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">
-              {t("hero_kicker")}
-            </span>
+            <div className="flex items-center gap-4 mb-8">
+              <span className="h-px w-10 bg-accent/40" />
+              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
+                {t("hero_kicker")}
+              </span>
+            </div>
             <h1 className="font-display text-6xl md:text-8xl leading-[0.9] text-balance mb-8">
               {t("hero_title_a")} <br />
               <span className="italic text-accent underline decoration-1 underline-offset-8">
@@ -69,7 +72,7 @@ function Index() {
             </p>
             <a
               href="#contact"
-              className="inline-block px-10 py-4 bg-foreground text-background text-[11px] uppercase tracking-[0.2em] font-medium rounded-sm hover:bg-accent transition-colors"
+              className="inline-block px-10 py-4 bg-foreground text-background text-[11px] uppercase tracking-[0.2em] font-medium rounded-sm hover:bg-accent transition-all duration-500 hover:tracking-[0.3em]"
             >
               {t("hero_cta")}
             </a>
@@ -80,8 +83,14 @@ function Index() {
               alt="Lotus Bloom salon interior"
               width={1024}
               height={1344}
-              className="w-full aspect-[3/4] object-cover rounded-t-[200px] rounded-b-lg"
+              className="w-full aspect-[3/4] object-cover rounded-t-[200px] rounded-b-lg shadow-2xl"
             />
+            {/* Decorative ornament */}
+            <div className="absolute -bottom-6 -left-6 md:-left-10 w-28 h-28 rounded-full border border-accent/30 flex items-center justify-center bg-background/40 backdrop-blur-sm">
+              <div className="w-full h-full rounded-full border border-accent/15 flex items-center justify-center">
+                <span className="font-mono text-[8px] tracking-[0.3em] uppercase text-accent">Bloom</span>
+              </div>
+            </div>
           </div>
         </div>
       </header>
@@ -90,9 +99,13 @@ function Index() {
       <section id="gallery" className="py-16 md:py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16 animate-reveal">
-            <span className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">
-              {t("home_gallery_kicker")}
-            </span>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <span className="h-px w-10 bg-border" />
+              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
+                {t("home_gallery_kicker")}
+              </span>
+              <span className="h-px w-10 bg-border" />
+            </div>
             <h2 className="font-display text-4xl md:text-5xl italic text-balance">
               {t("home_gallery_title")}
             </h2>
@@ -102,45 +115,57 @@ function Index() {
       </section>
 
       {/* About */}
-      <section id="about" className="py-16 md:py-20 px-6 bg-foreground/5">
+      <section id="about" className="py-20 md:py-28 px-6 bg-foreground/5 relative">
         <div className="max-w-4xl mx-auto text-center animate-reveal">
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent block mb-6">
-            {t("about_kicker")}
-          </span>
-          <h2 className="font-display text-4xl md:text-5xl mb-8 leading-tight text-balance">
+          <div className="font-display italic text-5xl text-accent/40 mb-6 leading-none">&</div>
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <span className="h-px w-10 bg-border" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
+              {t("about_kicker")}
+            </span>
+            <span className="h-px w-10 bg-border" />
+          </div>
+          <h2 className="font-display text-4xl md:text-5xl mb-10 leading-tight text-balance italic">
             {t("about_title")}
           </h2>
           <p className="text-muted-foreground text-lg max-w-[60ch] mx-auto text-pretty leading-relaxed">
             {t("about_body")}
           </p>
+          <div className="w-px h-16 bg-gradient-to-b from-accent/40 to-transparent mx-auto mt-12" />
         </div>
       </section>
 
       {/* Services */}
-      <section id="services" className="py-16 md:py-20 px-6">
+      <section id="services" className="py-20 md:py-28 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-end mb-16 border-b border-border pb-8">
-            <h2 className="font-display text-5xl italic">{t("services_title")}</h2>
-            <p className="font-mono text-[10px] text-muted-foreground tracking-widest uppercase">
+          <div className="flex justify-between items-end mb-20 border-b border-border pb-8">
+            <div>
+              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent block mb-3">01 — Menu</span>
+              <h2 className="font-display text-5xl md:text-6xl italic">{t("services_title")}</h2>
+            </div>
+            <p className="font-mono text-[10px] text-muted-foreground tracking-widest uppercase hidden md:block">
               {t("services_meta")}
             </p>
           </div>
 
-          <div className="grid gap-px bg-border border border-border overflow-hidden rounded-sm">
-            {services.map((s) => (
+          <div className="divide-y divide-border">
+            {services.map((s, i) => (
               <div
                 key={s.title}
-                className="group bg-background p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-6 transition-colors hover:bg-accent/5"
+                className="group py-10 md:py-12 grid grid-cols-[auto_1fr_auto] items-baseline gap-6 md:gap-10 transition-colors hover:text-accent"
               >
-                <div className="md:max-w-xl">
-                  <h3 className="text-2xl font-display mb-2 underline decoration-accent/30 decoration-1 underline-offset-4">
+                <span className="font-mono text-[10px] text-muted-foreground tracking-widest opacity-60 pt-2">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-display mb-2 group-hover:italic transition-all">
                     {s.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm italic">{s.desc}</p>
+                  <p className="text-muted-foreground text-sm italic max-w-xl">{s.desc}</p>
                 </div>
-                <div className="flex items-center gap-8">
-                  <span className="font-mono text-xl tracking-tighter text-accent">{s.price}</span>
-                </div>
+                <span className="font-mono text-lg md:text-xl tracking-tight text-accent self-start pt-2">
+                  {s.price}
+                </span>
               </div>
             ))}
           </div>
