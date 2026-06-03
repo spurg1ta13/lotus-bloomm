@@ -86,6 +86,21 @@ function Index() {
         </div>
       </header>
 
+      {/* Gallery */}
+      <section id="gallery" className="py-32 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16 animate-reveal">
+            <span className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">
+              {t("home_gallery_kicker")}
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl italic text-balance">
+              {t("home_gallery_title")}
+            </h2>
+          </div>
+          <GalleryCarousel showThumbnails={false} ctaHref="/gallery" />
+        </div>
+      </section>
+
       {/* About */}
       <section id="about" className="py-32 px-6 bg-foreground/5">
         <div className="max-w-4xl mx-auto text-center animate-reveal">
@@ -132,21 +147,6 @@ function Index() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Gallery */}
-      <section id="gallery" className="py-32 px-6 bg-foreground/5">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16 animate-reveal">
-            <span className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">
-              {t("home_gallery_kicker")}
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl italic text-balance">
-              {t("home_gallery_title")}
-            </h2>
-          </div>
-          <GalleryCarousel showThumbnails={false} ctaHref="/gallery" />
         </div>
       </section>
 
