@@ -221,15 +221,19 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-20 px-6">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 mb-16">
+    <section id="contact" className="mt-12 py-20 md:py-28 px-6 bg-foreground text-background rounded-t-[40px] md:rounded-t-[60px]">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 mb-16">
         <div>
-          <h2 className="font-display text-5xl mb-8 italic text-balance">{t("contact_title")}</h2>
+          <div className="flex items-center gap-4 mb-6">
+            <span className="h-px w-10 bg-accent/60" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">02 — Visit</span>
+          </div>
+          <h2 className="font-display text-5xl md:text-6xl mb-10 italic text-balance">{t("contact_title")}</h2>
           <div className="space-y-6">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-accent mb-4">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-accent/80 mb-4">
               {t("contact_info")}
             </p>
-            <div className="space-y-2">
+            <div className="space-y-2 border-l border-background/15 pl-6">
               <p className="text-xl">
                 <a href="tel:+302313052391" className="hover:text-accent transition-colors">+30 231 305 2391</a>
               </p>
@@ -241,12 +245,12 @@ function Contact() {
                   href="https://www.google.com/maps/search/?api=1&query=Lotus+Bloom+Paraskevopoulou+15+Thessaloniki+54640"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-accent transition-colors underline underline-offset-4"
+                  className="text-background/70 hover:text-accent transition-colors underline underline-offset-4"
                 >
                   {t("contact_address")}
                 </a>
               </p>
-              <p className="text-muted-foreground text-sm">{t("contact_hours")}</p>
+              <p className="text-background/60 text-sm italic">{t("contact_hours")}</p>
             </div>
             <div className="pt-8 flex gap-6">
               <a
@@ -275,40 +279,40 @@ function Contact() {
             </div>
           </div>
         </div>
-        <div className="bg-foreground/5 p-8 md:p-12 rounded-sm">
+        <div className="bg-background/5 border border-background/10 p-8 md:p-12 rounded-sm backdrop-blur-sm">
           {sent ? (
             <p className="font-display text-2xl italic">{t("form_sent")}</p>
           ) : (
             <form className="space-y-8" onSubmit={onSubmit}>
               <div className="space-y-1">
-                <label className="text-[10px] uppercase tracking-widest font-mono">{t("form_name")}</label>
+                <label className="text-[10px] uppercase tracking-[0.3em] font-mono text-background/60">{t("form_name")}</label>
                 <input
                   name="name"
                   required
                   type="text"
-                  className="w-full bg-transparent border-b border-border py-2 focus:outline-none focus:border-accent transition-colors"
+                  className="w-full bg-transparent border-b border-background/20 py-2 focus:outline-none focus:border-accent transition-colors"
                 />
               </div>
               <div className="space-y-1">
-                <label className="text-[10px] uppercase tracking-widest font-mono">{t("form_email")}</label>
+                <label className="text-[10px] uppercase tracking-[0.3em] font-mono text-background/60">{t("form_email")}</label>
                 <input
                   name="email"
                   required
                   type="email"
-                  className="w-full bg-transparent border-b border-border py-2 focus:outline-none focus:border-accent transition-colors"
+                  className="w-full bg-transparent border-b border-background/20 py-2 focus:outline-none focus:border-accent transition-colors"
                 />
               </div>
               <div className="space-y-1">
-                <label className="text-[10px] uppercase tracking-widest font-mono">{t("form_message")}</label>
+                <label className="text-[10px] uppercase tracking-[0.3em] font-mono text-background/60">{t("form_message")}</label>
                 <textarea
                   name="message"
                   rows={3}
-                  className="w-full bg-transparent border-b border-border py-2 focus:outline-none focus:border-accent transition-colors resize-none"
+                  className="w-full bg-transparent border-b border-background/20 py-2 focus:outline-none focus:border-accent transition-colors resize-none"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full py-4 border border-foreground text-[11px] uppercase tracking-[0.2em] font-medium hover:bg-foreground hover:text-background transition-all"
+                className="w-full py-4 border border-background/40 text-[11px] uppercase tracking-[0.3em] font-medium hover:bg-background hover:text-foreground transition-all duration-500"
               >
                 {t("form_submit")}
               </button>
@@ -321,7 +325,7 @@ function Contact() {
           href="https://www.google.com/maps/search/?api=1&query=Lotus+Bloom+Paraskevopoulou+15+Thessaloniki+54640"
           target="_blank"
           rel="noopener noreferrer"
-          className="block group rounded-sm overflow-hidden border border-border"
+          className="block group rounded-sm overflow-hidden border border-background/10"
           aria-label="Open Lotus Bloom on Google Maps"
         >
           <iframe
@@ -329,7 +333,7 @@ function Contact() {
             src="https://www.google.com/maps?q=Paraskevopoulou%2015%2C%20Thessaloniki%20546%2040&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-[360px] md:h-[420px] grayscale group-hover:grayscale-0 transition-all duration-500 pointer-events-none"
+            className="w-full h-[360px] md:h-[420px] grayscale invert opacity-80 group-hover:grayscale-0 group-hover:invert-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none"
           />
         </a>
       </div>
