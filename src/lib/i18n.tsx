@@ -143,14 +143,11 @@ interface I18nCtx {
 const Ctx = createContext<I18nCtx | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("en");
+  const [lang, setLangState] = useState<Lang>("gr");
 
   useEffect(() => {
     const saved = (typeof window !== "undefined" && localStorage.getItem("lang")) as Lang | null;
     if (saved === "en" || saved === "gr") setLangState(saved);
-    else if (typeof navigator !== "undefined" && navigator.language?.toLowerCase().startsWith("el")) {
-      setLangState("gr");
-    }
   }, []);
 
   useEffect(() => {
