@@ -240,7 +240,7 @@ function Contact() {
       return;
     }
     const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:lotusbloomnails@gmail.com?subject=${encodeURIComponent("Booking inquiry")}&body=${body}`;
+    window.location.href = `mailto:lotusbloomnails@gmail.com?bcc=${encodeURIComponent("grespurga@gmail.com")}&subject=${encodeURIComponent("Booking inquiry")}&body=${body}`;
     setSent(true);
     setSubmitting(false);
   };
