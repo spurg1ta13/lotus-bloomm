@@ -11,9 +11,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Lotus Bloom Nails & More — Beauty Salon in Thessaloniki" },
-      { name: "description", content: "Nails, lashes, brows and signature beauty rituals in Thessaloniki. Book your appointment at Lotus Bloom." },
+      { name: "description", content: "A clean, modern boho studio in Thessaloniki where simplicity meets natural harmony. Nails, lashes and brows at Lotus Bloom." },
       { property: "og:title", content: "Lotus Bloom Nails & More" },
-      { property: "og:description", content: "Signature beauty rituals in Thessaloniki — nails, lashes, brows and more." },
+      { property: "og:description", content: "A clean, modern boho studio where simplicity meets natural harmony." },
       { property: "og:url", content: "/" },
     ],
     links: [
