@@ -10,14 +10,10 @@ import heroImg from "@/assets/hero.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Lotus Bloom Nails & More — Beauty Salon in Thessaloniki" },
-      { name: "description", content: "A clean, modern boho studio in Thessaloniki where simplicity meets natural harmony. Nails, lashes and brows at Lotus Bloom." },
-      { property: "og:title", content: "Lotus Bloom Nails & More" },
-      { property: "og:description", content: "A clean, modern boho studio where simplicity meets natural harmony." },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://lotus-bloomm.lovable.app/" },
     ],
     links: [
-      { rel: "canonical", href: "/" },
+      { rel: "canonical", href: "https://lotus-bloomm.lovable.app/" },
       { rel: "preload", as: "image", href: heroImg, fetchpriority: "high" },
     ],
     scripts: [
@@ -27,10 +23,17 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "BeautySalon",
           name: "Lotus Bloom Nails & More",
-          image: "/og-image.jpg",
-          address: { "@type": "PostalAddress", addressLocality: "Thessaloniki", addressCountry: "GR" },
-          telephone: "+30 210 000 0000",
+          url: "https://lotus-bloomm.lovable.app/",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Paraskevopoulou 15",
+            addressLocality: "Thessaloniki",
+            postalCode: "546 40",
+            addressCountry: "GR",
+          },
+          telephone: "+30 231 305 2391",
           email: "lotusbloomnails@gmail.com",
+          openingHours: "Mo-Sa 10:00-20:00",
           sameAs: [
             "https://www.instagram.com/lotusbloom_nails.and.more",
             "https://www.facebook.com/p/Lotus-Bloom-nailsmore-61584502558088/",
@@ -86,18 +89,23 @@ function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <Header />
-
+      <main>
       {/* Hero */}
-      <header id="home" className="relative pt-16 pb-20 px-6 overflow-hidden">
+      <section id="home" className="relative pt-16 pb-20 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="animate-reveal">
             <span className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">
               {t("hero_kicker")}
             </span>
             <h1 className="font-display text-6xl md:text-8xl leading-[0.9] text-balance mb-8">
-              {t("hero_title_a")} <br />
-              <span className="italic text-accent underline decoration-1 underline-offset-8">
-                {t("hero_title_b")}
+              <span className="sr-only">
+                Lotus Bloom Nails & More — Beauty Salon in Thessaloniki
+              </span>
+              <span aria-hidden="true">
+                {t("hero_title_a")} <br />
+                <span className="italic text-accent underline decoration-1 underline-offset-8">
+                  {t("hero_title_b")}
+                </span>
               </span>
             </h1>
             <p className="max-w-[40ch] text-lg text-muted-foreground text-pretty leading-relaxed mb-10 italic">
@@ -123,7 +131,7 @@ function Index() {
             />
           </div>
         </div>
-      </header>
+      </section>
 
       {/* Gallery */}
       <section id="gallery" className="py-16 md:py-20 px-6">
@@ -194,6 +202,7 @@ function Index() {
       </section>
 
       <Contact />
+      </main>
 
       <footer className="py-12 px-6 border-t border-border">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">

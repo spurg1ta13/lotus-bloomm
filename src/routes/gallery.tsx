@@ -19,9 +19,9 @@ export const Route = createFileRoute("/gallery")({
         content: "Nail art creations from our Thessaloniki studio.",
       },
       { property: "og:image", content: galleryImages[0].src },
-      { property: "og:url", content: "/gallery" },
+      { property: "og:url", content: "https://lotus-bloomm.lovable.app/gallery" },
     ],
-    links: [{ rel: "canonical", href: "/gallery" }],
+    links: [{ rel: "canonical", href: "https://lotus-bloomm.lovable.app/gallery" }],
   }),
   component: GalleryPage,
 });
@@ -38,7 +38,10 @@ function GalleryPage() {
             {t("gallery_kicker")}
           </span>
           <h1 className="font-display text-5xl md:text-7xl leading-[0.9] text-balance mb-8 italic">
-            {t("gallery_heading")}
+            <span className="sr-only">
+              Gallery — Nail Art Portfolio by Lotus Bloom Thessaloniki
+            </span>
+            <span aria-hidden="true">{t("gallery_heading")}</span>
           </h1>
           <p className="max-w-[55ch] mx-auto text-lg text-muted-foreground text-pretty leading-relaxed">
             {t("gallery_lede")}
