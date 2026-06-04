@@ -1,12 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { useServerFn } from "@tanstack/react-start";
 import { Instagram, Facebook } from "lucide-react";
 import { Header } from "@/components/Header";
 import { CookieBanner } from "@/components/CookieBanner";
 import { useI18n, translations } from "@/lib/i18n";
 import { GalleryCarousel } from "@/components/GalleryCarousel";
-import { sendContactForm } from "@/lib/contact.functions";
 import heroImg from "@/assets/hero.jpg";
 
 export const Route = createFileRoute("/")({
@@ -188,7 +186,6 @@ function Contact() {
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string; consent?: string }>({});
-  const sendForm = useServerFn(sendContactForm);
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -206,8 +203,12 @@ function Contact() {
     setErrors(next);
     if (Object.keys(next).length > 0) return;
     setSubmitting(true);
-    const result = await sendForm({ data: { name, email, message, website } });
-    if (!result.ok) {
+    const response = await fetch("/api/public/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, message, website }),
+    });
+    if (!response.ok) {
       setErrors({ consent: "We couldn't send your message. Please try again or email us directly." });
       setSubmitting(false);
       return;

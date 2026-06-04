@@ -76,19 +76,19 @@ export const Route = createFileRoute("/lovable/email/queue/process")({
           )
         }
 
-        // Verify the caller is authorized with the service role key.
-        // In the TanStack stack, the pg_cron job sends the service role key as a Bearer token.
+        // Verify the caller is authorized with a service role token.
+        // The scheduled queue worker sends the current backend service key as a Bearer token.
         const authHeader = request.headers.get('Authorization')
         if (!authHeader?.startsWith('Bearer ')) {
           return Response.json({ error: 'Unauthorized' }, { status: 401 })
         }
 
         const token = authHeader.slice('Bearer '.length).trim()
-        if (token !== supabaseServiceKey) {
+        const supabase: SupabaseClient<any, any> = createClient(supabaseUrl, token)
+        const { error: tokenError } = await supabase.auth.admin.listUsers({ page: 1, perPage: 1 })
+        if (tokenError) {
           return Response.json({ error: 'Forbidden' }, { status: 403 })
         }
-
-        const supabase: SupabaseClient<any, any> = createClient(supabaseUrl, supabaseServiceKey)
 
         // 1. Check rate-limit cooldown and read queue config
         const { data: state } = await supabase
@@ -226,7 +226,6 @@ export const Route = createFileRoute("/lovable/email/queue/process")({
                   run_id: payload.run_id,
                   to: payload.to,
                   from: payload.from,
-                  reply_to: payload.reply_to,
                   sender_domain: payload.sender_domain,
                   subject: payload.subject,
                   html: payload.html,

@@ -1,4 +1,5 @@
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
+import { sendLovableEmail } from "@lovable.dev/email-js";
 
 const SENDER_DOMAIN = "notify.lotusbloom.gr";
 const BUSINESS_RECIPIENT = "lotusbloomnails@gmail.com";
@@ -61,13 +62,65 @@ function buildContactEmail({ name, email, message }: ContactEmailInput) {
 }
 
 export async function enqueueContactEmail(input: ContactEmailInput) {
+  const apiKey = process.env.LOVABLE_API_KEY;
+  if (!apiKey) throw new Error("Missing email API key");
+
   const messageBaseId = `contact-form-${crypto.randomUUID()}`;
   const email = buildContactEmail(input);
   const recipients = [BUSINESS_RECIPIENT, BCC_RECIPIENT];
 
   for (const recipient of recipients) {
     const messageId = `${messageBaseId}-${recipient === BUSINESS_RECIPIENT ? "business" : "copy"}`;
-    const payload = {
+    const { data: suppressed, error: suppressionError } = await supabaseAdmin
+      .from("suppressed_emails")
+      .select("id")
+      .eq("email", recipient)
+      .maybeSingle();
+
+    if (suppressionError) throw suppressionError;
+
+    if (suppressed) {
+      await supabaseAdmin.from("email_send_log").insert({
+        message_id: messageId,
+        template_name: "contact-form",
+        recipient_email: recipient,
+        status: "suppressed",
+        metadata: { source: "website_contact_form" },
+      });
+      continue;
+    }
+
+    const { data: existingToken, error: existingTokenError } = await supabaseAdmin
+      .from("email_unsubscribe_tokens")
+      .select("token")
+      .eq("email", recipient)
+      .maybeSingle();
+
+    if (existingTokenError) throw existingTokenError;
+
+    let unsubscribeToken = existingToken?.token;
+
+    if (!unsubscribeToken) {
+      unsubscribeToken = crypto.randomUUID();
+      const { error: tokenError } = await supabaseAdmin.from("email_unsubscribe_tokens").insert({
+        token: unsubscribeToken,
+        email: recipient,
+      });
+
+      if (tokenError) throw tokenError;
+    }
+
+    await supabaseAdmin.from("email_send_log").insert({
+      message_id: messageId,
+      template_name: "contact-form",
+      recipient_email: recipient,
+      status: "pending",
+      metadata: { source: "website_contact_form" },
+    });
+
+    try {
+      await sendLovableEmail(
+        {
       to: recipient,
       from: `Lotus Bloom <noreply@${SENDER_DOMAIN}>`,
       reply_to: input.email,
@@ -79,22 +132,29 @@ export async function enqueueContactEmail(input: ContactEmailInput) {
       label: "contact-form",
       idempotency_key: messageId,
       message_id: messageId,
-      queued_at: new Date().toISOString(),
-    };
+      unsubscribe_token: unsubscribeToken,
+        },
+        { apiKey, sendUrl: process.env.LOVABLE_SEND_URL },
+      );
 
-    const { error: enqueueError } = await supabaseAdmin.rpc("enqueue_email", {
-      queue_name: "transactional_emails",
-      payload,
-    });
-
-    if (enqueueError) throw enqueueError;
-
-    await supabaseAdmin.from("email_send_log").insert({
-      message_id: messageId,
-      template_name: "contact-form",
-      recipient_email: recipient,
-      status: "pending",
-      metadata: { source: "website_contact_form" },
-    });
+      await supabaseAdmin.from("email_send_log").insert({
+        message_id: messageId,
+        template_name: "contact-form",
+        recipient_email: recipient,
+        status: "sent",
+        metadata: { source: "website_contact_form" },
+      });
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      await supabaseAdmin.from("email_send_log").insert({
+        message_id: messageId,
+        template_name: "contact-form",
+        recipient_email: recipient,
+        status: "failed",
+        error_message: errorMessage.slice(0, 1000),
+        metadata: { source: "website_contact_form" },
+      });
+      throw error;
+    }
   }
 }
