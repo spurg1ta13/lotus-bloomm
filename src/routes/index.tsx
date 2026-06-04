@@ -80,6 +80,9 @@ function Index() {
               alt="Lotus Bloom salon interior"
               width={1024}
               height={1344}
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
               className="w-full aspect-[3/4] object-cover rounded-t-[200px] rounded-b-lg"
             />
           </div>
