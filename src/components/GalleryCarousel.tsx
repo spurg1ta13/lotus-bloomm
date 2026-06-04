@@ -11,11 +11,31 @@ import { useI18n } from "@/lib/i18n";
 import img1 from "@/assets/gallery/1.jpg.asset.json";
 import img2 from "@/assets/gallery/2.jpg.asset.json";
 import img3 from "@/assets/gallery/3.jpg.asset.json";
+import img4 from "@/assets/gallery/4.jpg.asset.json";
+import img5 from "@/assets/gallery/5.jpg.asset.json";
+import img6 from "@/assets/gallery/6.jpg.asset.json";
+import img7 from "@/assets/gallery/7.jpg.asset.json";
+import img8 from "@/assets/gallery/8.jpg.asset.json";
+import img9 from "@/assets/gallery/9.jpg.asset.json";
+import img10 from "@/assets/gallery/10.jpg.asset.json";
+import img11 from "@/assets/gallery/11.jpg.asset.json";
+import img12 from "@/assets/gallery/12.jpg.asset.json";
+import img13 from "@/assets/gallery/13.jpg.asset.json";
 
 export const galleryImages = [
   { src: img1.url, alt: "Black gel manicure with white animal-print accent nails" },
   { src: img2.url, alt: "Soft pink signature manicure on square nails" },
   { src: img3.url, alt: "Dark stiletto nail art with sculpted 3D elements" },
+  { src: img4.url, alt: "Pink baby boomer French manicure with hot pink double-line tips on square nails" },
+  { src: img5.url, alt: "Glossy magenta fuchsia almond gel manicure" },
+  { src: img6.url, alt: "Pink and white French manicure with hand-painted cherry nail art" },
+  { src: img7.url, alt: "Red gel manicure with checkered, 8-ball and stitches nail art accents" },
+  { src: img8.url, alt: "Pink ombré almond nails with 3D sculpted flower and gold bead accents" },
+  { src: img9.url, alt: "Pink and white French manicure with painted stone-pattern tips on long square nails" },
+  { src: img10.url, alt: "Blue shimmer ombré almond gel manicure" },
+  { src: img11.url, alt: "Glazed donut pearl chrome manicure on round natural nails" },
+  { src: img12.url, alt: "Classic white-tip French manicure on short square nails" },
+  { src: img13.url, alt: "Nude almond nails with minimalist hand-painted pink wildflower nail art" },
 ];
 
 interface GalleryCarouselProps {
