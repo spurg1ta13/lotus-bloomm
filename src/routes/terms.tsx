@@ -32,7 +32,7 @@ function Terms() {
           For questions about these terms, contact{" "}
           <a href="mailto:lotusbloomnails@gmail.com" className="text-foreground hover:text-accent transition-colors">lotusbloomnails@gmail.com</a>
           {" "}or call{" "}
-          <a href="tel:+302313052391" className="text-foreground hover:text-accent transition-colors">+30 231 305 2391</a>.
+          <a href="tel:+302313052391" className="text-foreground hover:text-accent transition-colors whitespace-nowrap">+30 231 305 2391</a>.
         </p>
       </div>
     </article>
