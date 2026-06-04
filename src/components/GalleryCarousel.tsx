@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import {
   Carousel,
@@ -78,6 +78,33 @@ export function GalleryCarousel({
   const { t } = useI18n();
   const [api, setApi] = useState<CarouselApi | null>(null);
   const [current, setCurrent] = useState(0);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+  const prevLightbox = useCallback(
+    () => setLightboxIndex((i) => (i === null ? i : (i - 1 + galleryImages.length) % galleryImages.length)),
+    [],
+  );
+  const nextLightbox = useCallback(
+    () => setLightboxIndex((i) => (i === null ? i : (i + 1) % galleryImages.length)),
+    [],
+  );
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      else if (e.key === "ArrowLeft") prevLightbox();
+      else if (e.key === "ArrowRight") nextLightbox();
+    };
+    window.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [lightboxIndex, closeLightbox, prevLightbox, nextLightbox]);
 
   return (
     <div>
@@ -103,7 +130,8 @@ export function GalleryCarousel({
                   loading={eagerFirst && i === 0 ? "eager" : "lazy"}
                   decoding="async"
                   fetchPriority={eagerFirst && i === 0 ? "high" : "auto"}
-                  className="w-full h-auto aspect-[4/5] md:aspect-[4/3] object-cover"
+                  onClick={() => setLightboxIndex(i)}
+                  className="w-full h-auto aspect-[4/5] md:aspect-[4/3] object-cover cursor-zoom-in"
                 />
               </figure>
             </CarouselItem>
@@ -148,7 +176,7 @@ export function GalleryCarousel({
             <button
               key={im.src}
               type="button"
-              onClick={() => api?.scrollTo(i)}
+              onClick={() => setLightboxIndex(i)}
               aria-label={`Show ${im.alt}`}
               className={`group overflow-hidden rounded-sm border transition-all ${
                 i === current ? "border-accent" : "border-border hover:border-foreground/40"
@@ -161,7 +189,7 @@ export function GalleryCarousel({
                 height={400}
                 loading="lazy"
                 decoding="async"
-                className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500 cursor-zoom-in"
               />
             </button>
           ))}
@@ -176,6 +204,47 @@ export function GalleryCarousel({
           >
             {t("gallery_cta")}
           </Link>
+        </div>
+      )}
+
+      {lightboxIndex !== null && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image viewer"
+          onClick={closeLightbox}
+          className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-10"
+        >
+          <button
+            type="button"
+            aria-label="Close"
+            onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
+            className="absolute top-4 right-4 md:top-6 md:right-6 inline-flex items-center justify-center h-11 w-11 rounded-full bg-background/80 border border-border text-foreground hover:bg-foreground hover:text-background transition-all"
+          >
+            <X className="h-5 w-5" strokeWidth={1.5} />
+          </button>
+          <button
+            type="button"
+            aria-label="Previous image"
+            onClick={(e) => { e.stopPropagation(); prevLightbox(); }}
+            className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 inline-flex items-center justify-center h-11 w-11 rounded-full bg-background/80 border border-border text-foreground hover:bg-foreground hover:text-background transition-all"
+          >
+            <ChevronLeft className="h-5 w-5" strokeWidth={1.5} />
+          </button>
+          <button
+            type="button"
+            aria-label="Next image"
+            onClick={(e) => { e.stopPropagation(); nextLightbox(); }}
+            className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 inline-flex items-center justify-center h-11 w-11 rounded-full bg-background/80 border border-border text-foreground hover:bg-foreground hover:text-background transition-all"
+          >
+            <ChevronRight className="h-5 w-5" strokeWidth={1.5} />
+          </button>
+          <img
+            src={galleryImages[lightboxIndex].src}
+            alt={galleryImages[lightboxIndex].alt}
+            onClick={(e) => e.stopPropagation()}
+            className="max-h-[88vh] max-w-[92vw] object-contain rounded-sm shadow-2xl"
+          />
         </div>
       )}
     </div>
