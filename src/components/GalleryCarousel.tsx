@@ -26,6 +26,14 @@ import img19 from "@/assets/gallery/19.jpg.asset.json";
 import img20 from "@/assets/gallery/20.jpg.asset.json";
 import img21 from "@/assets/gallery/21.jpg.asset.json";
 import img22 from "@/assets/gallery/22.jpg.asset.json";
+import imgNew1 from "@/assets/gallery/new-1.jpg.asset.json";
+import imgNew2 from "@/assets/gallery/new-2.jpg.asset.json";
+import imgNew3 from "@/assets/gallery/new-3.jpg.asset.json";
+import imgNew4 from "@/assets/gallery/new-4.jpg.asset.json";
+import imgNew5 from "@/assets/gallery/new-5.jpg.asset.json";
+import imgNew6 from "@/assets/gallery/new-6.jpg.asset.json";
+import imgNew7 from "@/assets/gallery/new-7.jpg.asset.json";
+import imgNew8 from "@/assets/gallery/new-8.jpg.asset.json";
 
 export const galleryImages = [
   { src: img1.url, alt: "Black gel manicure with white animal-print accent nails" },
@@ -46,6 +54,14 @@ export const galleryImages = [
   { src: img20.url, alt: "Fuchsia square manicure with leopard accent nail art" },
   { src: img21.url, alt: "Classic pink and white French manicure on square nails" },
   { src: img22.url, alt: "Black and white dotted French tip almond manicure" },
+  { src: imgNew1.url, alt: "Burgundy swirl French tip almond manicure with abstract nail art" },
+  { src: imgNew2.url, alt: "Glossy classic red almond gel manicure" },
+  { src: imgNew3.url, alt: "Red and white polka dot nail art on short almond nails" },
+  { src: imgNew4.url, alt: "Brown 3D blooming gel snake skin nail art on almond nails" },
+  { src: imgNew5.url, alt: "Milky white ombré square manicure with leopard print accent nail" },
+  { src: imgNew6.url, alt: "Nude almond manicure with multicolored rhinestone crystal nail art" },
+  { src: imgNew7.url, alt: "Glossy milky white almond gel manicure" },
+  { src: imgNew8.url, alt: "Deep red almond manicure with white polka dot nail art" },
 ];
 
 interface GalleryCarouselProps {
