@@ -6,7 +6,7 @@ import { Header } from "@/components/Header";
 import { CookieBanner } from "@/components/CookieBanner";
 import { useI18n, translations } from "@/lib/i18n";
 import { GalleryCarousel } from "@/components/GalleryCarousel";
-import { verifyRecaptcha } from "@/lib/recaptcha.functions";
+import { sendContactForm } from "@/lib/contact.functions";
 import heroImg from "@/assets/hero.jpg";
 
 const RECAPTCHA_SITE_KEY = "6LfhcwwtAAAAAIQTwqZpwHL6F_9lezE-JPLL-ZaH";
@@ -211,10 +211,11 @@ function Contact() {
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string; consent?: string }>({});
-  const verify = useServerFn(verifyRecaptcha);
+  const sendForm = useServerFn(sendContactForm);
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const data = new FormData(form);
     const name = String(data.get("name") || "").trim();
     const email = String(data.get("email") || "").trim();
     const message = String(data.get("message") || "").trim();
@@ -233,14 +234,13 @@ function Contact() {
       setSubmitting(false);
       return;
     }
-    const result = await verify({ data: { token, action: "contact_submit" } });
+    const result = await sendForm({ data: { name, email, message, token, action: "contact_submit" } });
     if (!result.ok) {
-      setErrors({ consent: t("form_err_bot") });
+      setErrors({ consent: result.reason === "bot_check_failed" ? t("form_err_bot") : "We couldn't send your message. Please try again or email us directly." });
       setSubmitting(false);
       return;
     }
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:lotusbloomnails@gmail.com?bcc=${encodeURIComponent("grespurga@gmail.com")}&subject=${encodeURIComponent("Booking inquiry")}&body=${body}`;
+    form.reset();
     setSent(true);
     setSubmitting(false);
   };
