@@ -89,9 +89,9 @@ function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <Header />
-
+      <main>
       {/* Hero */}
-      <header id="home" className="relative pt-16 pb-20 px-6 overflow-hidden">
+      <section id="home" className="relative pt-16 pb-20 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="animate-reveal">
             <span className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">
@@ -131,7 +131,7 @@ function Index() {
             />
           </div>
         </div>
-      </header>
+      </section>
 
       {/* Gallery */}
       <section id="gallery" className="py-16 md:py-20 px-6">
@@ -202,6 +202,7 @@ function Index() {
       </section>
 
       <Contact />
+      </main>
 
       <footer className="py-12 px-6 border-t border-border">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
