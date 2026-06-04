@@ -1,11 +1,36 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import { Instagram, Facebook } from "lucide-react";
 import { Header } from "@/components/Header";
 import { CookieBanner } from "@/components/CookieBanner";
 import { useI18n, translations } from "@/lib/i18n";
 import { GalleryCarousel } from "@/components/GalleryCarousel";
+import { verifyRecaptcha } from "@/lib/recaptcha.functions";
 import heroImg from "@/assets/hero.jpg";
+
+const RECAPTCHA_SITE_KEY = "6LfhcwwtAAAAAIQTwqZpwHL6F_9lezE-JPLL-ZaH";
+
+declare global {
+  interface Window {
+    grecaptcha?: {
+      ready: (cb: () => void) => void;
+      execute: (siteKey: string, opts: { action: string }) => Promise<string>;
+    };
+  }
+}
+
+function getRecaptchaToken(action: string): Promise<string | null> {
+  return new Promise((resolve) => {
+    if (typeof window === "undefined" || !window.grecaptcha) return resolve(null);
+    window.grecaptcha.ready(() => {
+      window
+        .grecaptcha!.execute(RECAPTCHA_SITE_KEY, { action })
+        .then((token) => resolve(token))
+        .catch(() => resolve(null));
+    });
+  });
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -184,8 +209,10 @@ function Index() {
 function Contact() {
   const { t } = useI18n();
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string; consent?: string }>({});
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const verify = useServerFn(verifyRecaptcha);
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const name = String(data.get("name") || "").trim();
@@ -199,9 +226,23 @@ function Contact() {
     if (!consent) next.consent = t("form_err_consent");
     setErrors(next);
     if (Object.keys(next).length > 0) return;
+    setSubmitting(true);
+    const token = await getRecaptchaToken("contact_submit");
+    if (!token) {
+      setErrors({ consent: t("form_err_bot") });
+      setSubmitting(false);
+      return;
+    }
+    const result = await verify({ data: { token, action: "contact_submit" } });
+    if (!result.ok) {
+      setErrors({ consent: t("form_err_bot") });
+      setSubmitting(false);
+      return;
+    }
     const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
     window.location.href = `mailto:lotusbloomnails@gmail.com?subject=${encodeURIComponent("Booking inquiry")}&body=${body}`;
     setSent(true);
+    setSubmitting(false);
   };
 
   return (
@@ -323,10 +364,16 @@ function Contact() {
               </div>
               <button
                 type="submit"
+                disabled={submitting}
                 className="w-full py-4 border border-foreground text-[11px] uppercase tracking-[0.2em] font-medium hover:bg-foreground hover:text-background transition-all"
               >
-                {t("form_submit")}
+                {submitting ? "…" : t("form_submit")}
               </button>
+              <p className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground/70 pt-2">
+                Protected by reCAPTCHA ·{" "}
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Privacy</a>{" "}·{" "}
+                <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Terms</a>
+              </p>
             </form>
           )}
         </div>
