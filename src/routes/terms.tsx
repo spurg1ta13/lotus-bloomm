@@ -26,7 +26,7 @@ function Terms() {
       <div className="space-y-6 text-muted-foreground leading-relaxed">
         <p>By booking an appointment with Lotus Bloom Nails & More you agree to the following terms.</p>
         <h2 className="font-display text-2xl text-foreground">Appointments & cancellations</h2>
-        <p>Please notify us at least 24 hours in advance to cancel or reschedule. Late cancellations may be subject to a fee.</p>
+        <p>Please notify us at least 24 hours in advance to cancel or reschedule.</p>
         <h2 className="font-display text-2xl text-foreground">Payment</h2>
         <p>Payment is due at the time of service. We accept cash and major debit/credit cards.</p>
         <h2 className="font-display text-2xl text-foreground">Liability</h2>
