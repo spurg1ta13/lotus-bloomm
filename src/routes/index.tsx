@@ -184,12 +184,21 @@ function Index() {
 function Contact() {
   const { t } = useI18n();
   const [sent, setSent] = useState(false);
+  const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string; consent?: string }>({});
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-    const name = String(data.get("name") || "");
-    const email = String(data.get("email") || "");
-    const message = String(data.get("message") || "");
+    const name = String(data.get("name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const message = String(data.get("message") || "").trim();
+    const consent = data.get("consent") === "on";
+    const next: typeof errors = {};
+    if (!name) next.name = t("form_err_name");
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = t("form_err_email");
+    if (!message) next.message = t("form_err_message");
+    if (!consent) next.consent = t("form_err_consent");
+    setErrors(next);
+    if (Object.keys(next).length > 0) return;
     const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
     window.location.href = `mailto:lotusbloomnails@gmail.com?subject=${encodeURIComponent("Booking inquiry")}&body=${body}`;
     setSent(true);
@@ -254,32 +263,63 @@ function Contact() {
           {sent ? (
             <p className="font-display text-2xl italic">{t("form_sent")}</p>
           ) : (
-            <form className="space-y-8" onSubmit={onSubmit}>
+            <form className="space-y-8" onSubmit={onSubmit} noValidate>
               <div className="space-y-1">
                 <label className="text-[10px] uppercase tracking-widest font-mono">{t("form_name")}</label>
                 <input
                   name="name"
-                  required
                   type="text"
-                  className="w-full bg-transparent border-b border-border py-2 focus:outline-none focus:border-accent transition-colors"
+                  className={`w-full bg-transparent border-b py-2 focus:outline-none transition-colors ${errors.name ? "border-accent" : "border-border focus:border-accent"}`}
                 />
+                {errors.name && (
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-accent pt-1">{errors.name}</p>
+                )}
               </div>
               <div className="space-y-1">
                 <label className="text-[10px] uppercase tracking-widest font-mono">{t("form_email")}</label>
                 <input
                   name="email"
-                  required
                   type="email"
-                  className="w-full bg-transparent border-b border-border py-2 focus:outline-none focus:border-accent transition-colors"
+                  className={`w-full bg-transparent border-b py-2 focus:outline-none transition-colors ${errors.email ? "border-accent" : "border-border focus:border-accent"}`}
                 />
+                {errors.email && (
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-accent pt-1">{errors.email}</p>
+                )}
               </div>
               <div className="space-y-1">
                 <label className="text-[10px] uppercase tracking-widest font-mono">{t("form_message")}</label>
                 <textarea
                   name="message"
                   rows={3}
-                  className="w-full bg-transparent border-b border-border py-2 focus:outline-none focus:border-accent transition-colors resize-none"
+                  className={`w-full bg-transparent border-b py-2 focus:outline-none transition-colors resize-none ${errors.message ? "border-accent" : "border-border focus:border-accent"}`}
                 />
+                {errors.message && (
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-accent pt-1">{errors.message}</p>
+                )}
+              </div>
+              <div className="space-y-1">
+                <label className="flex items-start gap-3 text-sm cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="consent"
+                    className="mt-1 h-4 w-4 accent-accent border-border"
+                  />
+                  <span className="text-muted-foreground leading-relaxed">
+                    {t("form_consent_a")}{" "}
+                    <a
+                      href="/terms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-4 hover:text-accent transition-colors"
+                    >
+                      {t("form_consent_b")}
+                    </a>
+                    .
+                  </span>
+                </label>
+                {errors.consent && (
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-accent pt-1">{errors.consent}</p>
+                )}
               </div>
               <button
                 type="submit"
