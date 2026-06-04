@@ -116,7 +116,7 @@ export const translations: Translations = {
     svc_f5: "Θεραπευτικό πεντικιούρ",
     svc_f6: "Jelly spa",
     svc_f7: "Μάσκα ενυδάτωσης ποδιών",
-    svc_e1: "Χείσιμο νυχιού",
+    svc_e1: "Χτίσιμο νυχιού",
     svc_e2: "Αφαίρεση gel / acrygel",
     svc_e3: "Αφαίρεση ημιμόνιμου",
     svc_e4: "Όμπρε / γαλλικό",
