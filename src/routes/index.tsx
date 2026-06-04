@@ -44,11 +44,44 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const { t } = useI18n();
-  const services = [1, 2, 3, 4, 5, 6].map((i) => ({
-    title: t(`svc_${i}_t` as keyof typeof translations.en),
-    desc: t(`svc_${i}_d` as keyof typeof translations.en),
-    price: ["€25", "€45", "€35", "€45", "€20", "€40"][i - 1],
-  }));
+  const fromLabel = t("svc_from");
+  const groups: { label: string; items: { key: keyof typeof translations.en; price: string; from?: boolean }[] }[] = [
+    {
+      label: t("svc_cat_hands"),
+      items: [
+        { key: "svc_h1", price: "€7" },
+        { key: "svc_h2", price: "€10" },
+        { key: "svc_h3", price: "€13" },
+        { key: "svc_h4", price: "€16" },
+        { key: "svc_h5", price: "€22" },
+        { key: "svc_h6", price: "€33", from: true },
+        { key: "svc_h7", price: "€25" },
+        { key: "svc_h8", price: "€10" },
+      ],
+    },
+    {
+      label: t("svc_cat_feet"),
+      items: [
+        { key: "svc_f1", price: "€18" },
+        { key: "svc_f2", price: "€15" },
+        { key: "svc_f3", price: "€24" },
+        { key: "svc_f4", price: "€20" },
+        { key: "svc_f5", price: "€25" },
+        { key: "svc_f6", price: "€5" },
+        { key: "svc_f7", price: "€7" },
+      ],
+    },
+    {
+      label: t("svc_cat_extras"),
+      items: [
+        { key: "svc_e1", price: "€3" },
+        { key: "svc_e2", price: "€10" },
+        { key: "svc_e3", price: "€5" },
+        { key: "svc_e4", price: "€5" },
+        { key: "svc_e5", price: "€1", from: true },
+      ],
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
@@ -132,21 +165,28 @@ function Index() {
             </p>
           </div>
 
-          <div className="grid gap-px bg-border border border-border overflow-hidden rounded-sm">
-            {services.map((s) => (
-              <div
-                key={s.title}
-                className="group bg-background p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-6 transition-colors hover:bg-accent/5"
-              >
-                <div className="md:max-w-xl">
-                  <h3 className="text-2xl font-display mb-2 underline decoration-accent/30 decoration-1 underline-offset-4">
-                    {s.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm italic">{s.desc}</p>
-                </div>
-                <div className="flex items-center gap-8">
-                  <span className="font-mono text-xl tracking-tighter text-accent">{s.price}</span>
-                </div>
+          <div className="space-y-16">
+            {groups.map((g) => (
+              <div key={g.label}>
+                <h3 className="font-display text-3xl md:text-4xl italic mb-6 text-accent">
+                  {g.label}
+                </h3>
+                <ul className="border-t border-border">
+                  {g.items.map((item) => (
+                    <li
+                      key={item.key}
+                      className="flex items-baseline justify-between gap-4 py-4 border-b border-border hover:bg-accent/5 transition-colors"
+                    >
+                      <span className="font-display text-lg md:text-xl pr-2">
+                        {t(item.key)}
+                      </span>
+                      <span className="flex-1 mx-3 border-b border-dotted border-border/60 translate-y-[-4px]" />
+                      <span className="font-mono text-sm md:text-base text-accent whitespace-nowrap shrink-0">
+                        {item.from ? `${fromLabel} ` : ""}{item.price}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
