@@ -1,7 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
 
-import { enqueueContactEmail } from "./contact-email.server";
-
 type ContactFormInput = {
   name: string;
   email: string;
@@ -33,6 +31,7 @@ export const sendContactForm = createServerFn({ method: "POST" })
         return { ok: true as const };
       }
 
+      const { enqueueContactEmail } = await import("./contact-email.server");
       await enqueueContactEmail({ name: data.name, email: data.email, message: data.message });
       return { ok: true as const };
     } catch (error) {
