@@ -28,7 +28,7 @@ function Terms() {
         <h2 className="font-display text-2xl text-foreground">Liability</h2>
         <p>Please inform us of any allergies or skin conditions before treatment. We are not liable for reactions arising from undisclosed conditions.</p>
         <h2 className="font-display text-2xl text-foreground">Contact</h2>
-        <p>For questions about these terms, contact hello@lotusbloom.gr.</p>
+        <p>For questions about these terms, contact lotusbloomnails@gmail.com.</p>
       </div>
     </article>
   );
