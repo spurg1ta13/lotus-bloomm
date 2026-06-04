@@ -205,23 +205,23 @@ function Contact() {
               {t("contact_info")}
             </p>
             <div className="space-y-2">
-              <p className="text-xl">
+              <p className="text-base">
                 <a href="tel:+302313052391" className="hover:text-accent transition-colors">+30 231 305 2391</a>
               </p>
-              <p className="text-xl">
+              <p className="text-base">
                 <a href="mailto:lotusbloomnails@gmail.com" className="hover:text-accent transition-colors">lotusbloomnails@gmail.com</a>
               </p>
-              <p className="text-sm">
+              <p className="text-base">
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Lotus+Bloom+Paraskevopoulou+15+Thessaloniki+54640"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-accent transition-colors underline underline-offset-4"
+                  className="hover:text-accent transition-colors underline underline-offset-4"
                 >
                   {t("contact_address")}
                 </a>
               </p>
-              <p className="text-muted-foreground text-sm">{t("contact_hours")}</p>
+              <p className="text-base">{t("contact_hours")}</p>
             </div>
             <div className="pt-8 flex gap-6">
               <a
