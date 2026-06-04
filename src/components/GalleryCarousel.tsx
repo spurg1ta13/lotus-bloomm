@@ -21,6 +21,15 @@ import img10 from "@/assets/gallery/10.jpg.asset.json";
 import img11 from "@/assets/gallery/11.jpg.asset.json";
 import img12 from "@/assets/gallery/12.jpg.asset.json";
 import img13 from "@/assets/gallery/13.jpg.asset.json";
+import img14 from "@/assets/gallery/14.jpg.asset.json";
+import img15 from "@/assets/gallery/15.jpg.asset.json";
+import img16 from "@/assets/gallery/16.jpg.asset.json";
+import img17 from "@/assets/gallery/17.jpg.asset.json";
+import img19 from "@/assets/gallery/19.jpg.asset.json";
+import img20 from "@/assets/gallery/20.jpg.asset.json";
+import img21 from "@/assets/gallery/21.jpg.asset.json";
+import img22 from "@/assets/gallery/22.jpg.asset.json";
+import img23 from "@/assets/gallery/23.jpg.asset.json";
 
 export const galleryImages = [
   { src: img1.url, alt: "Black gel manicure with white animal-print accent nails" },
@@ -36,6 +45,15 @@ export const galleryImages = [
   { src: img11.url, alt: "Glazed donut pearl chrome manicure on round natural nails" },
   { src: img12.url, alt: "Classic white-tip French manicure on short square nails" },
   { src: img13.url, alt: "Nude almond nails with minimalist hand-painted pink wildflower nail art" },
+  { src: img14.url, alt: "Glossy bright red almond manicure with solid color finish" },
+  { src: img15.url, alt: "Abstract red French swirl nail art on almond nails" },
+  { src: img16.url, alt: "Soft pink almond manicure with daisy flower nail art and gold centers" },
+  { src: img17.url, alt: "Pastel lilac almond manicure with white polka dot nail art" },
+  { src: img19.url, alt: "Milky white ombré manicure on short square nails" },
+  { src: img20.url, alt: "Fuchsia square manicure with leopard accent nail art" },
+  { src: img21.url, alt: "Classic pink and white French manicure on square nails" },
+  { src: img22.url, alt: "Black and white dotted French tip almond manicure" },
+  { src: img23.url, alt: "Chocolate brown and nude manicure with bold daisy flower nail art" },
 ];
 
 interface GalleryCarouselProps {
