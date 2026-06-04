@@ -28,7 +28,12 @@ function Terms() {
         <h2 className="font-display text-2xl text-foreground">Liability</h2>
         <p>Please inform us of any allergies or skin conditions before treatment. We are not liable for reactions arising from undisclosed conditions.</p>
         <h2 className="font-display text-2xl text-foreground">Contact</h2>
-        <p>For questions about these terms, contact lotusbloomnails@gmail.com.</p>
+        <p>
+          For questions about these terms, contact{" "}
+          <a href="mailto:lotusbloomnails@gmail.com" className="text-foreground hover:text-accent transition-colors">lotusbloomnails@gmail.com</a>
+          {" "}or call{" "}
+          <a href="tel:+302313052391" className="text-foreground hover:text-accent transition-colors">+30 231 305 2391</a>.
+        </p>
       </div>
     </article>
   );
