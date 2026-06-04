@@ -1,0 +1,17 @@
+# Lotus Bloom Nails & More
+
+> Boho beauty studio in Thessaloniki offering manicures, pedicures, gel extensions, lash lift and brow design. Bilingual site (Greek / English).
+
+## Pages
+
+- [Home](/): Studio overview, philosophy, services with 2026 price list (Hands, Feet, Add-Ons) and contact form.
+- [Gallery](/gallery): Nail art portfolio — signature manicures, gel extensions and hand-painted designs.
+- [Privacy Policy](/privacy): How visitor data is handled.
+- [Terms of Service](/terms): Booking and usage terms.
+
+## Contact
+
+- Address: Paraskevopoulou 15, Thessaloniki 546 40, Greece
+- Phone: +30 231 305 2391
+- Email: lotusbloomnails@gmail.com
+- Hours: Mon–Sat 10:00–20:00
