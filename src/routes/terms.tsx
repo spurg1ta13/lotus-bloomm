@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
@@ -16,7 +18,9 @@ export const Route = createFileRoute("/terms")({
 
 function Terms() {
   return (
-    <article className="max-w-2xl mx-auto px-6 py-24">
+    <div className="min-h-screen bg-background text-foreground font-sans flex flex-col">
+      <Header />
+      <article className="max-w-2xl mx-auto px-6 py-24 flex-1 w-full">
       <Link to="/" className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground">← Back</Link>
       <h1 className="font-display text-5xl mt-8 mb-10">Terms of Service</h1>
       <div className="space-y-6 text-muted-foreground leading-relaxed">
@@ -35,6 +39,8 @@ function Terms() {
           <a href="tel:+302313052391" className="text-foreground hover:text-accent transition-colors whitespace-nowrap">+30 231 305 2391</a>.
         </p>
       </div>
-    </article>
+      </article>
+      <Footer />
+    </div>
   );
 }
