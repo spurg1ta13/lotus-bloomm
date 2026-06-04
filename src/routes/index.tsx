@@ -125,9 +125,9 @@ function Index() {
       {/* Services */}
       <section id="services" className="py-16 md:py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-end mb-16 border-b border-border pb-8">
-            <h2 className="font-display text-5xl italic">{t("services_title")}</h2>
-            <p className="font-mono text-[10px] text-muted-foreground tracking-widest uppercase">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 sm:gap-8 mb-16 border-b border-border pb-8">
+            <h2 className="font-display text-5xl italic leading-none">{t("services_title")}</h2>
+            <p className="font-mono text-[10px] text-muted-foreground tracking-widest uppercase sm:text-right shrink-0">
               {t("services_meta")}
             </p>
           </div>
