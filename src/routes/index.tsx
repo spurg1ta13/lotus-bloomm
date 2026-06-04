@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
           image: "/og-image.jpg",
           address: { "@type": "PostalAddress", addressLocality: "Thessaloniki", addressCountry: "GR" },
           telephone: "+30 210 000 0000",
-          email: "hello@lotusbloom.gr",
+          email: "lotusbloomnails@gmail.com",
           sameAs: [
             "https://www.instagram.com/lotusbloom_nails.and.more",
             "https://www.facebook.com/p/Lotus-Bloom-nailsmore-61584502558088/",
@@ -191,7 +191,7 @@ function Contact() {
     const email = String(data.get("email") || "");
     const message = String(data.get("message") || "");
     const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:hello@lotusbloom.gr?subject=${encodeURIComponent("Booking inquiry")}&body=${body}`;
+    window.location.href = `mailto:lotusbloomnails@gmail.com?subject=${encodeURIComponent("Booking inquiry")}&body=${body}`;
     setSent(true);
   };
 
@@ -209,7 +209,7 @@ function Contact() {
                 <a href="tel:+302313052391" className="hover:text-accent transition-colors">+30 231 305 2391</a>
               </p>
               <p className="text-xl">
-                <a href="mailto:hello@lotusbloom.gr" className="hover:text-accent transition-colors">hello@lotusbloom.gr</a>
+                <a href="mailto:lotusbloomnails@gmail.com" className="hover:text-accent transition-colors">lotusbloomnails@gmail.com</a>
               </p>
               <p className="text-sm">
                 <a
@@ -244,7 +244,7 @@ function Contact() {
                 <Facebook className="h-5 w-5" strokeWidth={1.5} />
                 <span>Facebook</span>
               </a>
-              <a href="mailto:hello@lotusbloom.gr" className="text-sm underline underline-offset-4 hover:text-accent transition-colors">
+              <a href="mailto:lotusbloomnails@gmail.com" className="text-sm underline underline-offset-4 hover:text-accent transition-colors">
                 Email
               </a>
             </div>
