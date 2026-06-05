@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { CookieBanner } from "@/components/CookieBanner";
 import { GalleryCarousel, galleryImages } from "@/components/GalleryCarousel";
+import { MonsteraLeaf } from "@/components/MonsteraLeaf";
 import { useI18n } from "@/lib/i18n";
 
 export const Route = createFileRoute("/gallery")({
@@ -32,8 +33,11 @@ function GalleryPage() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <Header />
-      <main className="pt-16 pb-24 px-6">
-        <section className="max-w-6xl mx-auto pt-16 text-center mb-16 animate-reveal">
+      <main className="relative pt-16 pb-24 px-6 overflow-hidden">
+        <MonsteraLeaf className="hidden md:block absolute -right-32 top-10 w-[460px] pointer-events-none select-none" rotate={20} opacity={0.5} />
+        <MonsteraLeaf className="md:hidden absolute -right-24 top-4 w-[280px] pointer-events-none select-none" rotate={22} opacity={0.4} />
+        <MonsteraLeaf className="hidden md:block absolute -left-28 bottom-20 w-[360px] pointer-events-none select-none" flip rotate={-18} opacity={0.4} />
+        <section className="relative max-w-6xl mx-auto pt-16 text-center mb-16 animate-reveal">
           <span className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">
             {t("gallery_kicker")}
           </span>
