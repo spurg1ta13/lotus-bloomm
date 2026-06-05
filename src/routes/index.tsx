@@ -84,6 +84,20 @@ function Index() {
         { key: "svc_e5", price: "€1", from: true },
       ],
     },
+    {
+      label: t("svc_cat_face"),
+      items: [
+        { key: "svc_fa1", price: "€5" },
+        { key: "svc_fa2", price: "€10" },
+        { key: "svc_fa3", price: "€30" },
+        { key: "svc_fa4", price: "€30" },
+        { key: "svc_fa5", price: "€50" },
+        { key: "svc_fa6", price: "€5" },
+        { key: "svc_fa7", price: "€10" },
+        { key: "svc_fa8", price: "€12" },
+        { key: "svc_fa9", price: "€5" },
+      ],
+    },
   ];
 
   return (
