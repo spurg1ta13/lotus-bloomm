@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { CookieBanner } from "@/components/CookieBanner";
 import { useI18n, translations } from "@/lib/i18n";
 import { GalleryCarousel } from "@/components/GalleryCarousel";
+import { MonsteraLeaf } from "@/components/MonsteraLeaf";
 import heroImg from "@/assets/hero.jpg";
 
 export const Route = createFileRoute("/")({
@@ -106,6 +107,8 @@ function Index() {
       <main>
       {/* Hero */}
       <section id="home" className="relative pt-16 pb-20 px-6 overflow-hidden">
+        <MonsteraLeaf className="hidden md:block absolute -right-24 -top-10 w-[420px] text-accent/15 pointer-events-none" rotate={18} />
+        <MonsteraLeaf className="md:hidden absolute -right-20 top-4 w-[260px] text-accent/12 pointer-events-none" rotate={20} />
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="animate-reveal">
             <span className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">
@@ -163,8 +166,9 @@ function Index() {
       </section>
 
       {/* About */}
-      <section id="about" className="py-16 md:py-20 px-6 bg-foreground/5">
-        <div className="max-w-4xl mx-auto text-center animate-reveal">
+      <section id="about" className="relative py-16 md:py-20 px-6 bg-foreground/5 overflow-hidden">
+        <MonsteraLeaf className="absolute -left-20 -bottom-16 w-[320px] text-accent/15 pointer-events-none" flip rotate={-12} />
+        <div className="relative max-w-4xl mx-auto text-center animate-reveal">
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent block mb-6">
             {t("about_kicker")}
           </span>
@@ -178,8 +182,9 @@ function Index() {
       </section>
 
       {/* Services */}
-      <section id="services" className="py-16 md:py-20 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section id="services" className="relative py-16 md:py-20 px-6 overflow-hidden">
+        <MonsteraLeaf className="hidden md:block absolute -right-32 top-40 w-[360px] text-accent/10 pointer-events-none" rotate={35} />
+        <div className="relative max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 sm:gap-8 mb-16 border-b border-border pb-8">
             <h2 className="font-display text-5xl italic leading-none">{t("services_title")}</h2>
             <p className="font-mono text-[10px] text-muted-foreground tracking-widest uppercase sm:text-right shrink-0">
@@ -288,8 +293,10 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-20 px-6">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 mb-16">
+    <section id="contact" className="relative py-16 md:py-20 px-6 overflow-hidden">
+      <MonsteraLeaf className="hidden md:block absolute -right-28 top-10 w-[380px] text-accent/12 pointer-events-none" rotate={25} />
+      <MonsteraLeaf className="hidden md:block absolute -left-24 bottom-10 w-[300px] text-accent/10 pointer-events-none" flip rotate={-15} />
+      <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-24 mb-16">
         <div>
           <h2 className="font-display text-5xl mb-8 italic text-balance">{t("contact_title")}</h2>
           <div className="space-y-6">
