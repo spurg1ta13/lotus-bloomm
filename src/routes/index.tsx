@@ -293,8 +293,10 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-20 px-6">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 mb-16">
+    <section id="contact" className="relative py-16 md:py-20 px-6 overflow-hidden">
+      <MonsteraLeaf className="hidden md:block absolute -right-28 top-10 w-[380px] text-accent/12 pointer-events-none" rotate={25} />
+      <MonsteraLeaf className="hidden md:block absolute -left-24 bottom-10 w-[300px] text-accent/10 pointer-events-none" flip rotate={-15} />
+      <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-24 mb-16">
         <div>
           <h2 className="font-display text-5xl mb-8 italic text-balance">{t("contact_title")}</h2>
           <div className="space-y-6">
