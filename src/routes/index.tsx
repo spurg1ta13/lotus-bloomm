@@ -107,8 +107,8 @@ function Index() {
       <main>
       {/* Hero */}
       <section id="home" className="relative pt-16 pb-20 px-6 overflow-hidden">
-        <MonsteraLeaf className="hidden md:block absolute -right-24 -top-10 w-[420px] text-accent/15 pointer-events-none" rotate={18} />
-        <MonsteraLeaf className="md:hidden absolute -right-20 top-4 w-[260px] text-accent/12 pointer-events-none" rotate={20} />
+        <MonsteraLeaf className="hidden md:block absolute -right-32 -top-16 w-[520px] pointer-events-none select-none" rotate={15} opacity={0.55} />
+        <MonsteraLeaf className="md:hidden absolute -right-24 -top-6 w-[300px] pointer-events-none select-none" rotate={18} opacity={0.45} />
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="animate-reveal">
             <span className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">
@@ -167,7 +167,7 @@ function Index() {
 
       {/* About */}
       <section id="about" className="relative py-16 md:py-20 px-6 bg-foreground/5 overflow-hidden">
-        <MonsteraLeaf className="absolute -left-20 -bottom-16 w-[320px] text-accent/15 pointer-events-none" flip rotate={-12} />
+        <MonsteraLeaf className="absolute -left-24 -bottom-20 w-[380px] pointer-events-none select-none" flip rotate={-15} opacity={0.5} />
         <div className="relative max-w-4xl mx-auto text-center animate-reveal">
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent block mb-6">
             {t("about_kicker")}
@@ -183,7 +183,7 @@ function Index() {
 
       {/* Services */}
       <section id="services" className="relative py-16 md:py-20 px-6 overflow-hidden">
-        <MonsteraLeaf className="hidden md:block absolute -right-32 top-40 w-[360px] text-accent/10 pointer-events-none" rotate={35} />
+        <MonsteraLeaf className="hidden md:block absolute -right-40 top-32 w-[440px] pointer-events-none select-none" rotate={28} opacity={0.45} />
         <div className="relative max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 sm:gap-8 mb-16 border-b border-border pb-8">
             <h2 className="font-display text-5xl italic leading-none">{t("services_title")}</h2>
@@ -294,8 +294,8 @@ function Contact() {
 
   return (
     <section id="contact" className="relative py-16 md:py-20 px-6 overflow-hidden">
-      <MonsteraLeaf className="hidden md:block absolute -right-28 top-10 w-[380px] text-accent/12 pointer-events-none" rotate={25} />
-      <MonsteraLeaf className="hidden md:block absolute -left-24 bottom-10 w-[300px] text-accent/10 pointer-events-none" flip rotate={-15} />
+      <MonsteraLeaf className="hidden md:block absolute -right-32 top-4 w-[460px] pointer-events-none select-none" rotate={22} opacity={0.5} />
+      <MonsteraLeaf className="hidden md:block absolute -left-28 bottom-4 w-[340px] pointer-events-none select-none" flip rotate={-18} opacity={0.4} />
       <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-24 mb-16">
         <div>
           <h2 className="font-display text-5xl mb-8 italic text-balance">{t("contact_title")}</h2>
