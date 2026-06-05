@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { CookieBanner } from "@/components/CookieBanner";
 import { useI18n, translations } from "@/lib/i18n";
 import { GalleryCarousel } from "@/components/GalleryCarousel";
+import { MonsteraLeaf } from "@/components/MonsteraLeaf";
 import heroImg from "@/assets/hero.jpg";
 
 export const Route = createFileRoute("/")({
