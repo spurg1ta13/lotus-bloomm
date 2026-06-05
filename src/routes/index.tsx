@@ -296,6 +296,8 @@ function Contact() {
     <section id="contact" className="relative py-16 md:py-20 px-6 overflow-hidden">
       <MonsteraLeaf className="hidden md:block absolute -right-32 top-4 w-[460px] pointer-events-none select-none" rotate={22} opacity={0.5} />
       <MonsteraLeaf className="hidden md:block absolute -left-28 bottom-4 w-[340px] pointer-events-none select-none" flip rotate={-18} opacity={0.4} />
+      <MonsteraLeaf className="md:hidden absolute -right-20 top-2 w-[240px] pointer-events-none select-none" rotate={25} opacity={0.4} />
+      <MonsteraLeaf className="md:hidden absolute -left-24 top-[40%] w-[260px] pointer-events-none select-none" flip rotate={-20} opacity={0.35} />
       <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-24 mb-16">
         <div>
           <h2 className="font-display text-5xl mb-8 italic text-balance">{t("contact_title")}</h2>
