@@ -107,8 +107,8 @@ function Index() {
       <main>
       {/* Hero */}
       <section id="home" className="relative pt-16 pb-20 px-6 overflow-hidden">
-        <MonsteraLeaf className="hidden md:block absolute -right-32 -top-16 w-[520px] pointer-events-none select-none" rotate={15} opacity={0.55} />
-        <MonsteraLeaf className="md:hidden absolute -right-24 -top-6 w-[300px] pointer-events-none select-none" rotate={18} opacity={0.45} />
+        <MonsteraLeaf eager className="hidden md:block absolute -right-32 -top-16 w-[520px] pointer-events-none select-none" rotate={15} opacity={0.55} />
+        <MonsteraLeaf eager className="md:hidden absolute -right-24 -top-6 w-[300px] pointer-events-none select-none" rotate={18} opacity={0.45} />
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="animate-reveal">
             <span className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">
@@ -225,7 +225,7 @@ function Index() {
 
       <footer className="py-12 px-6 border-t border-border">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="font-display italic text-lg opacity-60">{t("footer_brand")}</div>
+          <div className="font-display italic text-lg text-muted-foreground">{t("footer_brand")}</div>
           <div className="font-mono text-[10px] text-muted-foreground tracking-widest uppercase">
             © {new Date().getFullYear()} Lotus Bloom · {t("footer_rights")}
           </div>
@@ -365,8 +365,9 @@ function Contact() {
                 className="hidden"
               />
               <div className="space-y-1">
-                <label className="text-[10px] uppercase tracking-widest font-mono">{t("form_name")}</label>
+                <label htmlFor="contact-name" className="text-[10px] uppercase tracking-widest font-mono block">{t("form_name")}</label>
                 <input
+                  id="contact-name"
                   name="name"
                   type="text"
                   className={`w-full bg-transparent border-b py-2 focus:outline-none transition-colors ${errors.name ? "border-accent" : "border-border focus:border-accent"}`}
@@ -376,8 +377,9 @@ function Contact() {
                 )}
               </div>
               <div className="space-y-1">
-                <label className="text-[10px] uppercase tracking-widest font-mono">{t("form_phone")}</label>
+                <label htmlFor="contact-phone" className="text-[10px] uppercase tracking-widest font-mono block">{t("form_phone")}</label>
                 <input
+                  id="contact-phone"
                   name="phone"
                   type="tel"
                   inputMode="tel"
@@ -396,8 +398,9 @@ function Contact() {
                 )}
               </div>
               <div className="space-y-1">
-                <label className="text-[10px] uppercase tracking-widest font-mono">{t("form_message")}</label>
+                <label htmlFor="contact-message" className="text-[10px] uppercase tracking-widest font-mono block">{t("form_message")}</label>
                 <textarea
+                  id="contact-message"
                   name="message"
                   rows={3}
                   className={`w-full bg-transparent border-b py-2 focus:outline-none transition-colors resize-none ${errors.message ? "border-accent" : "border-border focus:border-accent"}`}
