@@ -193,7 +193,7 @@ export function GalleryCarousel({
             aria-label={`Go to slide ${i + 1}`}
             aria-current={i === current ? "true" : undefined}
             onClick={() => api?.scrollTo(i)}
-            className="inline-flex items-center justify-center h-11 w-6 group"
+            className="inline-flex items-center justify-center h-11 w-11 md:w-6 group"
           >
             <span
               className={`block h-1.5 rounded-full transition-all ${
