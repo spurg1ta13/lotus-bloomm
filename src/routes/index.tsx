@@ -107,8 +107,8 @@ function Index() {
       <main>
       {/* Hero */}
       <section id="home" className="relative pt-16 pb-20 px-6 overflow-hidden">
-        <MonsteraLeaf className="hidden md:block absolute -right-32 -top-16 w-[520px] pointer-events-none select-none" rotate={15} opacity={0.55} />
-        <MonsteraLeaf className="md:hidden absolute -right-24 -top-6 w-[300px] pointer-events-none select-none" rotate={18} opacity={0.45} />
+        <MonsteraLeaf eager className="hidden md:block absolute -right-32 -top-16 w-[520px] pointer-events-none select-none" rotate={15} opacity={0.55} />
+        <MonsteraLeaf eager className="md:hidden absolute -right-24 -top-6 w-[300px] pointer-events-none select-none" rotate={18} opacity={0.45} />
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="animate-reveal">
             <span className="block font-mono text-[10px] uppercase tracking-[0.3em] text-accent mb-6">
