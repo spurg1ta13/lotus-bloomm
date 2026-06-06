@@ -34,34 +34,61 @@ import imgNew5 from "@/assets/gallery/new-5.jpg.asset.json";
 import imgNew6 from "@/assets/gallery/new-6.jpg.asset.json";
 import imgNew7 from "@/assets/gallery/new-7.jpg.asset.json";
 import imgNew8 from "@/assets/gallery/new-8.jpg.asset.json";
+// Mobile-optimized WebP variants (≈900px wide) served via srcset on small viewports.
+import mImg1 from "@/assets/gallery/gallery-1.webp.asset.json";
+import mImg3 from "@/assets/gallery/gallery-3.webp.asset.json";
+import mImg5 from "@/assets/gallery/gallery-5.webp.asset.json";
+import mImg6 from "@/assets/gallery/gallery-6.webp.asset.json";
+import mImg7 from "@/assets/gallery/gallery-7.webp.asset.json";
+import mImg9 from "@/assets/gallery/gallery-9.webp.asset.json";
+import mImg10 from "@/assets/gallery/gallery-10.webp.asset.json";
+import mImg11 from "@/assets/gallery/gallery-11.webp.asset.json";
+import mImg12 from "@/assets/gallery/gallery-12.webp.asset.json";
+import mImg13 from "@/assets/gallery/gallery-13.webp.asset.json";
+import mImg14 from "@/assets/gallery/gallery-14.webp.asset.json";
+import mImg15 from "@/assets/gallery/gallery-15.webp.asset.json";
+import mImg16 from "@/assets/gallery/gallery-16.webp.asset.json";
+import mImg17 from "@/assets/gallery/gallery-17.webp.asset.json";
+import mImg19 from "@/assets/gallery/gallery-19.webp.asset.json";
+import mImg20 from "@/assets/gallery/gallery-20.webp.asset.json";
+import mImg21 from "@/assets/gallery/gallery-21.webp.asset.json";
+import mImg22 from "@/assets/gallery/gallery-22.webp.asset.json";
+import mImgNew1 from "@/assets/gallery/gallery-new-1.webp.asset.json";
+import mImgNew2 from "@/assets/gallery/gallery-new-2.webp.asset.json";
+import mImgNew3 from "@/assets/gallery/gallery-new-3.webp.asset.json";
+import mImgNew4 from "@/assets/gallery/gallery-new-4.webp.asset.json";
+import mImgNew5 from "@/assets/gallery/gallery-new-5.webp.asset.json";
+import mImgNew6 from "@/assets/gallery/gallery-new-6.webp.asset.json";
+import mImgNew7 from "@/assets/gallery/gallery-new-7.webp.asset.json";
+import mImgNew8 from "@/assets/gallery/gallery-new-8.webp.asset.json";
 
 export const galleryImages = [
-  { src: img1.url, alt: "Black gel manicure with white animal-print accent nails" },
-  { src: img3.url, alt: "Dark stiletto nail art with sculpted 3D elements" },
-  { src: img5.url, alt: "Glossy magenta fuchsia almond gel manicure" },
-  { src: img6.url, alt: "Pink and white French manicure with hand-painted cherry nail art" },
-  { src: img7.url, alt: "Red gel manicure with checkered, 8-ball and stitches nail art accents" },
-  { src: img9.url, alt: "Pink and white French manicure with painted stone-pattern tips on long square nails" },
-  { src: img10.url, alt: "Blue shimmer ombré almond gel manicure" },
-  { src: img11.url, alt: "Glazed donut pearl chrome manicure on round natural nails" },
-  { src: img12.url, alt: "Classic white-tip French manicure on short square nails" },
-  { src: img13.url, alt: "Nude almond nails with minimalist hand-painted pink wildflower nail art" },
-  { src: img14.url, alt: "Glossy bright red almond manicure with solid color finish" },
-  { src: img15.url, alt: "Abstract red French swirl nail art on almond nails" },
-  { src: img16.url, alt: "Soft pink almond manicure with daisy flower nail art and gold centers" },
-  { src: img17.url, alt: "Pastel lilac almond manicure with white polka dot nail art" },
-  { src: img19.url, alt: "Milky white ombré manicure on short square nails" },
-  { src: img20.url, alt: "Fuchsia square manicure with leopard accent nail art" },
-  { src: img21.url, alt: "Classic pink and white French manicure on square nails" },
-  { src: img22.url, alt: "Black and white dotted French tip almond manicure" },
-  { src: imgNew1.url, alt: "Burgundy swirl French tip almond manicure with abstract nail art" },
-  { src: imgNew2.url, alt: "Glossy classic red almond gel manicure" },
-  { src: imgNew3.url, alt: "Red and white polka dot nail art on short almond nails" },
-  { src: imgNew4.url, alt: "Brown 3D blooming gel snake skin nail art on almond nails" },
-  { src: imgNew5.url, alt: "Milky white ombré square manicure with leopard print accent nail" },
-  { src: imgNew6.url, alt: "Nude almond manicure with multicolored rhinestone crystal nail art" },
-  { src: imgNew7.url, alt: "Glossy milky white almond gel manicure" },
-  { src: imgNew8.url, alt: "Deep red almond manicure with white polka dot nail art" },
+  { src: img1.url, mSrc: mImg1.url, alt: "Black gel manicure with white animal-print accent nails" },
+  { src: img3.url, mSrc: mImg3.url, alt: "Dark stiletto nail art with sculpted 3D elements" },
+  { src: img5.url, mSrc: mImg5.url, alt: "Glossy magenta fuchsia almond gel manicure" },
+  { src: img6.url, mSrc: mImg6.url, alt: "Pink and white French manicure with hand-painted cherry nail art" },
+  { src: img7.url, mSrc: mImg7.url, alt: "Red gel manicure with checkered, 8-ball and stitches nail art accents" },
+  { src: img9.url, mSrc: mImg9.url, alt: "Pink and white French manicure with painted stone-pattern tips on long square nails" },
+  { src: img10.url, mSrc: mImg10.url, alt: "Blue shimmer ombré almond gel manicure" },
+  { src: img11.url, mSrc: mImg11.url, alt: "Glazed donut pearl chrome manicure on round natural nails" },
+  { src: img12.url, mSrc: mImg12.url, alt: "Classic white-tip French manicure on short square nails" },
+  { src: img13.url, mSrc: mImg13.url, alt: "Nude almond nails with minimalist hand-painted pink wildflower nail art" },
+  { src: img14.url, mSrc: mImg14.url, alt: "Glossy bright red almond manicure with solid color finish" },
+  { src: img15.url, mSrc: mImg15.url, alt: "Abstract red French swirl nail art on almond nails" },
+  { src: img16.url, mSrc: mImg16.url, alt: "Soft pink almond manicure with daisy flower nail art and gold centers" },
+  { src: img17.url, mSrc: mImg17.url, alt: "Pastel lilac almond manicure with white polka dot nail art" },
+  { src: img19.url, mSrc: mImg19.url, alt: "Milky white ombré manicure on short square nails" },
+  { src: img20.url, mSrc: mImg20.url, alt: "Fuchsia square manicure with leopard accent nail art" },
+  { src: img21.url, mSrc: mImg21.url, alt: "Classic pink and white French manicure on square nails" },
+  { src: img22.url, mSrc: mImg22.url, alt: "Black and white dotted French tip almond manicure" },
+  { src: imgNew1.url, mSrc: mImgNew1.url, alt: "Burgundy swirl French tip almond manicure with abstract nail art" },
+  { src: imgNew2.url, mSrc: mImgNew2.url, alt: "Glossy classic red almond gel manicure" },
+  { src: imgNew3.url, mSrc: mImgNew3.url, alt: "Red and white polka dot nail art on short almond nails" },
+  { src: imgNew4.url, mSrc: mImgNew4.url, alt: "Brown 3D blooming gel snake skin nail art on almond nails" },
+  { src: imgNew5.url, mSrc: mImgNew5.url, alt: "Milky white ombré square manicure with leopard print accent nail" },
+  { src: imgNew6.url, mSrc: mImgNew6.url, alt: "Nude almond manicure with multicolored rhinestone crystal nail art" },
+  { src: imgNew7.url, mSrc: mImgNew7.url, alt: "Glossy milky white almond gel manicure" },
+  { src: imgNew8.url, mSrc: mImgNew8.url, alt: "Deep red almond manicure with white polka dot nail art" },
 ];
 
 interface GalleryCarouselProps {
@@ -124,6 +151,8 @@ export function GalleryCarousel({
               <figure className="overflow-hidden rounded-sm border border-border bg-foreground/5">
                 <img
                   src={im.src}
+                  srcSet={`${im.mSrc} 900w, ${im.src} 1600w`}
+                  sizes="(max-width: 768px) 100vw, 800px"
                   alt={im.alt}
                   width={1600}
                   height={1200}
@@ -189,6 +218,8 @@ export function GalleryCarousel({
             >
               <img
                 src={im.src}
+                srcSet={`${im.mSrc} 900w, ${im.src} 1600w`}
+                sizes="(max-width: 768px) 33vw, 240px"
                 alt=""
                 width={400}
                 height={400}
