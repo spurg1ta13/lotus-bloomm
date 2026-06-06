@@ -149,19 +149,20 @@ export function GalleryCarousel({
           {galleryImages.map((im, i) => (
             <CarouselItem key={im.src}>
               <figure className="overflow-hidden rounded-sm border border-border bg-foreground/5">
-                <img
-                  src={im.src}
-                  srcSet={`${im.mSrc} 900w, ${im.src} 1600w`}
-                  sizes="(max-width: 768px) 100vw, 800px"
-                  alt={im.alt}
-                  width={1600}
-                  height={1200}
-                  loading={eagerFirst && i === 0 ? "eager" : "lazy"}
-                  decoding="async"
-                  fetchPriority={eagerFirst && i === 0 ? "high" : "auto"}
-                  onClick={() => setLightboxIndex(i)}
-                  className="w-full h-auto aspect-[4/5] md:aspect-[4/3] object-cover cursor-zoom-in"
-                />
+                <picture>
+                  <source media="(max-width: 767px)" srcSet={im.mSrc} type="image/webp" />
+                  <img
+                    src={im.src}
+                    alt={im.alt}
+                    width={1600}
+                    height={1200}
+                    loading={eagerFirst && i === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                    fetchPriority={eagerFirst && i === 0 ? "high" : "auto"}
+                    onClick={() => setLightboxIndex(i)}
+                    className="w-full h-auto aspect-[4/5] md:aspect-[4/3] object-cover cursor-zoom-in"
+                  />
+                </picture>
               </figure>
             </CarouselItem>
           ))}
