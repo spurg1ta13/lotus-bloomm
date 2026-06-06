@@ -259,7 +259,7 @@ function Contact() {
   const { t } = useI18n();
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-  const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string; consent?: string }>({});
+  const [errors, setErrors] = useState<{ name?: string; phone?: string; message?: string; consent?: string }>({});
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -376,14 +376,23 @@ function Contact() {
                 )}
               </div>
               <div className="space-y-1">
-                <label className="text-[10px] uppercase tracking-widest font-mono">{t("form_email")}</label>
+                <label className="text-[10px] uppercase tracking-widest font-mono">{t("form_phone")}</label>
                 <input
-                  name="email"
-                  type="email"
-                  className={`w-full bg-transparent border-b py-2 focus:outline-none transition-colors ${errors.email ? "border-accent" : "border-border focus:border-accent"}`}
+                  name="phone"
+                  type="tel"
+                  inputMode="tel"
+                  autoComplete="tel"
+                  pattern="[+0-9 ]*"
+                  maxLength={20}
+                  onInput={(e) => {
+                    const el = e.currentTarget;
+                    const cleaned = el.value.replace(/[^+0-9 ]/g, "");
+                    if (cleaned !== el.value) el.value = cleaned;
+                  }}
+                  className={`w-full bg-transparent border-b py-2 focus:outline-none transition-colors ${errors.phone ? "border-accent" : "border-border focus:border-accent"}`}
                 />
-                {errors.email && (
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-accent pt-1">{errors.email}</p>
+                {errors.phone && (
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-accent pt-1">{errors.phone}</p>
                 )}
               </div>
               <div className="space-y-1">
