@@ -217,17 +217,18 @@ export function GalleryCarousel({
                 i === current ? "border-accent" : "border-border hover:border-foreground/40"
               }`}
             >
-              <img
-                src={im.src}
-                srcSet={`${im.mSrc} 900w, ${im.src} 1600w`}
-                sizes="(max-width: 768px) 33vw, 240px"
-                alt=""
-                width={400}
-                height={400}
-                loading="lazy"
-                decoding="async"
-                className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500 cursor-zoom-in"
-              />
+              <picture>
+                <source media="(max-width: 767px)" srcSet={im.mSrc} type="image/webp" />
+                <img
+                  src={im.src}
+                  alt=""
+                  width={400}
+                  height={400}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500 cursor-zoom-in"
+                />
+              </picture>
             </button>
           ))}
         </div>
