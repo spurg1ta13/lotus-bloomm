@@ -265,13 +265,13 @@ function Contact() {
     const form = e.currentTarget;
     const data = new FormData(form);
     const name = String(data.get("name") || "").trim();
-    const email = String(data.get("email") || "").trim();
+    const phone = String(data.get("phone") || "").trim();
     const message = String(data.get("message") || "").trim();
     const website = String(data.get("website") || "").trim();
     const consent = data.get("consent") === "on";
     const next: typeof errors = {};
     if (!name) next.name = t("form_err_name");
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = t("form_err_email");
+    if (!phone || !/^\+?[0-9]{6,20}$/.test(phone.replace(/\s+/g, ""))) next.phone = t("form_err_phone");
     if (!message) next.message = t("form_err_message");
     if (!consent) next.consent = t("form_err_consent");
     setErrors(next);
@@ -280,7 +280,7 @@ function Contact() {
     const response = await fetch("/api/public/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, message, website }),
+      body: JSON.stringify({ name, phone, message, website }),
     });
     if (!response.ok) {
       setErrors({ consent: "We couldn't send your message. Please try again or email us directly." });
