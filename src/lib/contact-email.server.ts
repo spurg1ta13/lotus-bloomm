@@ -7,7 +7,7 @@ const BCC_RECIPIENT = "grespurga@gmail.com";
 
 type ContactEmailInput = {
   name: string;
-  email: string;
+  phone: string;
   message: string;
 };
 
@@ -20,7 +20,7 @@ function escapeHtml(value: string) {
     .replace(/'/g, "&#39;");
 }
 
-function buildContactEmail({ name, email, message }: ContactEmailInput) {
+function buildContactEmail({ name, phone, message }: ContactEmailInput) {
   const submittedAt = new Date().toLocaleString("en-GB", {
     dateStyle: "medium",
     timeStyle: "short",
@@ -28,14 +28,14 @@ function buildContactEmail({ name, email, message }: ContactEmailInput) {
   });
 
   const safeName = escapeHtml(name);
-  const safeEmail = escapeHtml(email);
+  const safePhone = escapeHtml(phone);
   const safeMessage = escapeHtml(message).replace(/\n/g, "<br />");
   const subject = `New booking inquiry from ${name}`.slice(0, 120);
   const text = [
     "New Lotus Bloom form submission",
     "",
     `Name: ${name}`,
-    `Email: ${email}`,
+    `Phone: ${phone}`,
     `Submitted: ${submittedAt}`,
     "",
     "Message:",
@@ -48,7 +48,7 @@ function buildContactEmail({ name, email, message }: ContactEmailInput) {
         <p style="margin: 0 0 8px; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #9c6676;">Lotus Bloom Nails & More</p>
         <h1 style="margin: 0 0 24px; font-size: 24px; font-weight: 500;">New booking inquiry</h1>
         <p style="margin: 0 0 12px;"><strong>Name:</strong> ${safeName}</p>
-        <p style="margin: 0 0 12px;"><strong>Email:</strong> <a href="mailto:${safeEmail}" style="color: #9c6676;">${safeEmail}</a></p>
+        <p style="margin: 0 0 12px;"><strong>Phone:</strong> <a href="tel:${safePhone.replace(/\s+/g, "")}" style="color: #9c6676;">${safePhone}</a></p>
         <p style="margin: 0 0 24px;"><strong>Submitted:</strong> ${escapeHtml(submittedAt)}</p>
         <div style="border-top: 1px solid #eadfe3; padding-top: 20px;">
           <p style="margin: 0 0 8px;"><strong>Message:</strong></p>
@@ -123,7 +123,6 @@ export async function enqueueContactEmail(input: ContactEmailInput) {
         {
       to: recipient,
       from: `Lotus Bloom <noreply@${SENDER_DOMAIN}>`,
-      reply_to: input.email,
       sender_domain: SENDER_DOMAIN,
       subject: email.subject,
       html: email.html,
