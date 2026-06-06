@@ -156,17 +156,22 @@ export function GalleryCarousel({
         </div>
       </Carousel>
 
-      <div className="mt-8 flex items-center justify-center gap-3">
+      <div className="mt-8 flex items-center justify-center gap-1">
         {galleryImages.map((_, i) => (
           <button
             key={i}
             type="button"
             aria-label={`Go to slide ${i + 1}`}
+            aria-current={i === current ? "true" : undefined}
             onClick={() => api?.scrollTo(i)}
-            className={`h-1.5 rounded-full transition-all ${
-              i === current ? "w-8 bg-foreground" : "w-3 bg-border hover:bg-foreground/40"
-            }`}
-          />
+            className="inline-flex items-center justify-center h-11 w-6 group"
+          >
+            <span
+              className={`block h-1.5 rounded-full transition-all ${
+                i === current ? "w-6 bg-foreground" : "w-2 bg-border group-hover:bg-foreground/40"
+              }`}
+            />
+          </button>
         ))}
       </div>
 
