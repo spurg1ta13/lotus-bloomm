@@ -9,7 +9,7 @@ const corsHeaders = {
 
 const ContactSchema = z.object({
   name: z.string().trim().min(1).max(120),
-  email: z.string().trim().email().max(254),
+  phone: z.string().trim().min(6).max(20).regex(/^\+?[0-9 ]+$/),
   message: z.string().trim().min(1).max(4000),
   website: z.string().trim().max(200).optional().default(""),
 });
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/api/public/contact")({
           }
 
           const { enqueueContactEmail } = await import("@/lib/contact-email.server");
-          await enqueueContactEmail({ name: data.name, email: data.email, message: data.message });
+          await enqueueContactEmail({ name: data.name, phone: data.phone, message: data.message });
 
           return Response.json({ ok: true }, { headers: corsHeaders });
         } catch (error) {
