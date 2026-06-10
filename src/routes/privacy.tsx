@@ -20,7 +20,7 @@ function Privacy() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans flex flex-col">
       <Header />
-      <article className="max-w-2xl mx-auto px-6 py-24 flex-1 w-full">
+      <main className="max-w-2xl mx-auto px-6 py-24 flex-1 w-full">
       <Link to="/" className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground">← Back</Link>
       <h1 className="font-display text-5xl mt-8 mb-10">Privacy Policy</h1>
       <div className="prose prose-neutral max-w-none space-y-6 text-muted-foreground leading-relaxed">
@@ -34,7 +34,7 @@ function Privacy() {
         <h2 className="font-display text-2xl text-foreground">Contact</h2>
         <p>Lotus Bloom Nails & More — Thessaloniki, Greece — lotusbloomnails@gmail.com</p>
       </div>
-      </article>
+      </main>
       <Footer />
     </div>
   );
