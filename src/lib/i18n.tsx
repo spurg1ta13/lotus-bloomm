@@ -18,7 +18,7 @@ export const translations: Translations = {
     hero_lede: "A clean, modern boho studio where simplicity meets natural harmony.",
     hero_cta: "Book Your Appointment",
     about_kicker: "Our Philosophy",
-    about_title: "We believe in the beauty of the slow ritual.",
+    about_title: "We believe that Beauty is in the details.",
     about_body: "At Lotus Bloom Nails & More in Thessaloniki we don't just provide beauty services — we curate moments of luminosity. Every manicure, pedicure, lash and brow treatment is designed to reveal your natural radiance, guided by certified specialists and premium professional products.",
     services_title: "Services",
     services_meta: "Price List 2026",
