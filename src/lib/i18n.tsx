@@ -174,7 +174,7 @@ export const translations: Translations = {
     gallery_lede: "Επιλεγμένες στιγμές από το studio μας — κάθε set σχεδιασμένο, ζωγραφισμένο και γυαλισμένο με αγάπη.",
     gallery_cta: "Δείτε όλη τη γκαλερί",
     home_gallery_kicker: "Γκαλερί",
-    home_gallery_title: "Πρόσφατες δημιουργίες, φρεσκογυαλισμένες.",
+    home_gallery_title: "Πρόσφατες δημιουργίες, καθαρή αισθητική.",
   },
 };
 
