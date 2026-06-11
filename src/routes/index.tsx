@@ -6,7 +6,8 @@ import { CookieBanner } from "@/components/CookieBanner";
 import { useI18n, translations } from "@/lib/i18n";
 import { GalleryCarousel } from "@/components/GalleryCarousel";
 import { MonsteraLeaf } from "@/components/MonsteraLeaf";
-import heroImg from "@/assets/hero.jpg";
+import heroAsset from "@/assets/hero.webp.asset.json";
+import heroMobileAsset from "@/assets/hero-mobile.webp.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -15,7 +16,14 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: "https://lotus-bloomm.lovable.app/" },
-      { rel: "preload", as: "image", href: heroImg, fetchpriority: "high" },
+      {
+        rel: "preload",
+        as: "image",
+        href: heroAsset.url,
+        imageSrcSet: `${heroMobileAsset.url} 720w, ${heroAsset.url} 1024w`,
+        imageSizes: "(max-width: 767px) 100vw, 50vw",
+        fetchpriority: "high",
+      },
     ],
     scripts: [
       {
@@ -137,10 +145,12 @@ function Index() {
           </div>
           <div className="relative animate-unfurl">
             <img
-              src={heroImg}
+              src={heroAsset.url}
+              srcSet={`${heroMobileAsset.url} 720w, ${heroAsset.url} 1024w`}
+              sizes="(max-width: 767px) 100vw, 50vw"
               alt="Lotus Bloom salon interior"
               width={1024}
-              height={1344}
+              height={1024}
               loading="eager"
               decoding="async"
               fetchPriority="high"
