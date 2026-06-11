@@ -3,7 +3,7 @@ import { Instagram, Facebook, Phone, Menu, X } from "lucide-react";
 import { Link, useRouterState, useNavigate } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n";
 import { LanguageToggle } from "./LanguageToggle";
-import logoAsset from "@/assets/logo.webp.asset.json";
+import logoAsset from "@/assets/logo-96.webp.asset.json";
 
 export function Header() {
   const { t } = useI18n();
