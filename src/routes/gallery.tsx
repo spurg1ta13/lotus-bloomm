@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { CookieBanner } from "@/components/CookieBanner";
 import { GalleryCarousel, galleryImages } from "@/components/GalleryCarousel";
 import { MonsteraLeaf } from "@/components/MonsteraLeaf";
@@ -56,6 +57,7 @@ function GalleryPage() {
           <GalleryCarousel eagerFirst />
         </section>
       </main>
+      <Footer />
       <CookieBanner />
     </div>
   );
