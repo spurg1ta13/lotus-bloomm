@@ -36,6 +36,10 @@ import imgNew7 from "@/assets/gallery/new-7.jpg.asset.json";
 import imgNew8 from "@/assets/gallery/new-8.jpg.asset.json";
 import imgNew9 from "@/assets/gallery/new-9.jpg.asset.json";
 import imgNew10 from "@/assets/gallery/new-10.jpg.asset.json";
+import imgNew32 from "@/assets/gallery/new-32.jpg.asset.json";
+import imgNew33 from "@/assets/gallery/new-33.jpg.asset.json";
+import imgNew34 from "@/assets/gallery/new-34.jpg.asset.json";
+import imgNew35 from "@/assets/gallery/new-35.jpg.asset.json";
 // Mobile-optimized WebP variants (≈900px wide) served via srcset on small viewports.
 import mImg1 from "@/assets/gallery/gallery-1.webp.asset.json";
 import mImg3 from "@/assets/gallery/gallery-3.webp.asset.json";
@@ -65,8 +69,16 @@ import mImgNew7 from "@/assets/gallery/gallery-new-7.webp.asset.json";
 import mImgNew8 from "@/assets/gallery/gallery-new-8.webp.asset.json";
 import mImgNew9 from "@/assets/gallery/gallery-new-9.webp.asset.json";
 import mImgNew10 from "@/assets/gallery/gallery-new-10.webp.asset.json";
+import mImgNew32 from "@/assets/gallery/gallery-new-32.webp.asset.json";
+import mImgNew33 from "@/assets/gallery/gallery-new-33.webp.asset.json";
+import mImgNew34 from "@/assets/gallery/gallery-new-34.webp.asset.json";
+import mImgNew35 from "@/assets/gallery/gallery-new-35.webp.asset.json";
 
 export const galleryImages = [
+  { src: imgNew32.url, mSrc: mImgNew32.url, alt: "Pastel ombré almond gel manicure with hand-painted gold starburst nail art and multicolored rhinestone gems" },
+  { src: imgNew33.url, mSrc: mImgNew33.url, alt: "Glossy hot pink fuchsia almond gel manicure with shimmer accent nail" },
+  { src: imgNew34.url, mSrc: mImgNew34.url, alt: "Nude short square manicure with black French tips and hand-painted red cherry accent nail" },
+  { src: imgNew35.url, mSrc: mImgNew35.url, alt: "Classic pink and white French manicure on almond-shaped natural nails" },
   { src: imgNew9.url, mSrc: mImgNew9.url, alt: "Nude almond manicure with pink leopard French tips and hand-painted pink floral accent nails" },
   { src: imgNew10.url, mSrc: mImgNew10.url, alt: "Glossy pastel yellow ombré French tip square gel manicure" },
   { src: img1.url, mSrc: mImg1.url, alt: "Black gel manicure with white animal-print accent nails" },
