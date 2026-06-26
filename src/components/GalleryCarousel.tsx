@@ -67,6 +67,8 @@ import mImgNew9 from "@/assets/gallery/gallery-new-9.webp.asset.json";
 import mImgNew10 from "@/assets/gallery/gallery-new-10.webp.asset.json";
 
 export const galleryImages = [
+  { src: imgNew9.url, mSrc: mImgNew9.url, alt: "Nude almond manicure with pink leopard French tips and hand-painted pink floral accent nails" },
+  { src: imgNew10.url, mSrc: mImgNew10.url, alt: "Nude square manicure with black French tips and hand-painted red cherry accent nail" },
   { src: img1.url, mSrc: mImg1.url, alt: "Black gel manicure with white animal-print accent nails" },
   { src: img3.url, mSrc: mImg3.url, alt: "Dark stiletto nail art with sculpted 3D elements" },
   { src: img5.url, mSrc: mImg5.url, alt: "Glossy magenta fuchsia almond gel manicure" },
@@ -93,8 +95,6 @@ export const galleryImages = [
   { src: imgNew6.url, mSrc: mImgNew6.url, alt: "Nude almond manicure with multicolored rhinestone crystal nail art" },
   { src: imgNew7.url, mSrc: mImgNew7.url, alt: "Glossy milky white almond gel manicure" },
   { src: imgNew8.url, mSrc: mImgNew8.url, alt: "Deep red almond manicure with white polka dot nail art" },
-  { src: imgNew9.url, mSrc: mImgNew9.url, alt: "Nude almond manicure with pink leopard French tips and hand-painted pink floral accent nails" },
-  { src: imgNew10.url, mSrc: mImgNew10.url, alt: "Nude square manicure with black French tips and hand-painted red cherry accent nail" },
 ];
 
 interface GalleryCarouselProps {
