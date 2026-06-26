@@ -68,7 +68,7 @@ import mImgNew10 from "@/assets/gallery/gallery-new-10.webp.asset.json";
 
 export const galleryImages = [
   { src: imgNew9.url, mSrc: mImgNew9.url, alt: "Nude almond manicure with pink leopard French tips and hand-painted pink floral accent nails" },
-  { src: imgNew10.url, mSrc: mImgNew10.url, alt: "Nude square manicure with black French tips and hand-painted red cherry accent nail" },
+  { src: imgNew10.url, mSrc: mImgNew10.url, alt: "Glossy pastel yellow ombré French tip square gel manicure" },
   { src: img1.url, mSrc: mImg1.url, alt: "Black gel manicure with white animal-print accent nails" },
   { src: img3.url, mSrc: mImg3.url, alt: "Dark stiletto nail art with sculpted 3D elements" },
   { src: img5.url, mSrc: mImg5.url, alt: "Glossy magenta fuchsia almond gel manicure" },
