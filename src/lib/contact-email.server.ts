@@ -121,17 +121,17 @@ export async function enqueueContactEmail(input: ContactEmailInput) {
     try {
       await sendLovableEmail(
         {
-      to: recipient,
-      from: `Lotus Bloom <noreply@${SENDER_DOMAIN}>`,
-      sender_domain: SENDER_DOMAIN,
-      subject: email.subject,
-      html: email.html,
-      text: email.text,
-      purpose: "transactional",
-      label: "contact-form",
-      idempotency_key: messageId,
-      message_id: messageId,
-      unsubscribe_token: unsubscribeToken,
+          to: recipient,
+          from: `Lotus Bloom <noreply@${SENDER_DOMAIN}>`,
+          sender_domain: SENDER_DOMAIN,
+          subject: email.subject,
+          html: email.html,
+          text: email.text,
+          purpose: "transactional",
+          label: "contact-form",
+          idempotency_key: messageId,
+          message_id: messageId,
+          unsubscribe_token: unsubscribeToken,
         },
         { apiKey, sendUrl: process.env.LOVABLE_SEND_URL },
       );

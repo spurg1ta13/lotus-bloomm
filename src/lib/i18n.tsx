@@ -19,7 +19,8 @@ export const translations: Translations = {
     hero_cta: "Book Your Appointment",
     about_kicker: "Our Philosophy",
     about_title: "We believe that Beauty is in the details.",
-    about_body: "At Lotus Bloom Nails & More in Thessaloniki we don't just provide beauty services — we curate moments of luminosity. Every manicure, pedicure, lash and brow treatment is designed to reveal your natural radiance, guided by certified specialists and premium professional products.",
+    about_body:
+      "At Lotus Bloom Nails & More in Thessaloniki we don't just provide beauty services — we curate moments of luminosity. Every manicure, pedicure, lash and brow treatment is designed to reveal your natural radiance, guided by certified specialists and premium professional products.",
     services_title: "Services",
     services_meta: "Price List 2026",
     svc_cat_hands: "Hands",
@@ -72,7 +73,8 @@ export const translations: Translations = {
     form_consent_a: "I agree to the",
     form_consent_b: "Terms of Service",
     form_err_bot: "Verification failed. Please try again.",
-    cookie_text: "We use cookies to enhance your browsing experience. By continuing, you accept our cookie policy.",
+    cookie_text:
+      "We use cookies to enhance your browsing experience. By continuing, you accept our cookie policy.",
     cookie_accept: "Accept",
     cookie_decline: "Decline",
     footer_brand: "Lotus Bloom Beauty",
@@ -81,12 +83,15 @@ export const translations: Translations = {
     footer_terms: "Terms of Service",
     footer_powered: "Powered by",
     meta_title: "Lotus Bloom Nails & More — Beauty Salon in Thessaloniki",
-    meta_desc: "Premium nail care, lash lifts and brow design in Thessaloniki. Book your appointment at Lotus Bloom Nails & More.",
+    meta_desc:
+      "Premium nail care, lash lifts and brow design in Thessaloniki. Book your appointment at Lotus Bloom Nails & More.",
     gallery_title: "Gallery — Nail Art by Lotus Bloom",
-    gallery_desc: "Browse our latest nail art creations: signature manicures, gel extensions and hand-painted designs from Lotus Bloom in Thessaloniki.",
+    gallery_desc:
+      "Browse our latest nail art creations: signature manicures, gel extensions and hand-painted designs from Lotus Bloom in Thessaloniki.",
     gallery_kicker: "Our Work",
     gallery_heading: "A glimpse into our craft.",
-    gallery_lede: "Hand-picked moments from our studio — each set sculpted, painted and polished with care.",
+    gallery_lede:
+      "Hand-picked moments from our studio — each set sculpted, painted and polished with care.",
     gallery_cta: "View Full Gallery",
     home_gallery_kicker: "Gallery",
     home_gallery_title: "Recent work, freshly polished.",
@@ -104,7 +109,8 @@ export const translations: Translations = {
     hero_cta: "Κλείστε Ραντεβού",
     about_kicker: "Η Φιλοσοφία μας",
     about_title: "Πιστεύουμε ότι η ομορφιά βρίσκεται στις λεπτομέρειες.",
-    about_body: "Στο Lotus Bloom Nails & More στη Θεσσαλονίκη δεν προσφέρουμε απλώς υπηρεσίες ομορφιάς — δημιουργούμε στιγμές λάμψης. Κάθε μανικιούρ, πεντικιούρ, περιποίηση βλεφαρίδων και φρυδιών αναδεικνύει τη φυσική σας ομορφιά, με πιστοποιημένες ειδικούς και premium επαγγελματικά προϊόντα.",
+    about_body:
+      "Στο Lotus Bloom Nails & More στη Θεσσαλονίκη δεν προσφέρουμε απλώς υπηρεσίες ομορφιάς — δημιουργούμε στιγμές λάμψης. Κάθε μανικιούρ, πεντικιούρ, περιποίηση βλεφαρίδων και φρυδιών αναδεικνύει τη φυσική σας ομορφιά, με πιστοποιημένες ειδικούς και premium επαγγελματικά προϊόντα.",
     services_title: "Υπηρεσίες",
     services_meta: "Τιμοκατάλογος 2026",
     svc_cat_hands: "Χέρια",
@@ -157,7 +163,8 @@ export const translations: Translations = {
     form_consent_a: "Αποδέχομαι τους",
     form_consent_b: "Όρους Χρήσης",
     form_err_bot: "Η επαλήθευση απέτυχε. Δοκιμάστε ξανά.",
-    cookie_text: "Χρησιμοποιούμε cookies για να βελτιώσουμε την εμπειρία περιήγησής σας. Συνεχίζοντας αποδέχεστε την πολιτική cookies.",
+    cookie_text:
+      "Χρησιμοποιούμε cookies για να βελτιώσουμε την εμπειρία περιήγησής σας. Συνεχίζοντας αποδέχεστε την πολιτική cookies.",
     cookie_accept: "Αποδοχή",
     cookie_decline: "Άρνηση",
     footer_brand: "Lotus Bloom Beauty",
@@ -166,12 +173,15 @@ export const translations: Translations = {
     footer_terms: "Όροι Χρήσης",
     footer_powered: "Powered by",
     meta_title: "Lotus Bloom Nails & More — Ινστιτούτο Ομορφιάς στη Θεσσαλονίκη",
-    meta_desc: "Premium περιποίηση νυχιών, lash lift και σχεδιασμός φρυδιών στη Θεσσαλονίκη. Κλείστε ραντεβού στο Lotus Bloom Nails & More.",
+    meta_desc:
+      "Premium περιποίηση νυχιών, lash lift και σχεδιασμός φρυδιών στη Θεσσαλονίκη. Κλείστε ραντεβού στο Lotus Bloom Nails & More.",
     gallery_title: "Γκαλερί — Nail Art από το Lotus Bloom",
-    gallery_desc: "Δείτε τις πιο πρόσφατες δημιουργίες nail art: signature μανικιούρ, επεκτάσεις gel και ζωγραφισμένα σχέδια στο Lotus Bloom Θεσσαλονίκης.",
+    gallery_desc:
+      "Δείτε τις πιο πρόσφατες δημιουργίες nail art: signature μανικιούρ, επεκτάσεις gel και ζωγραφισμένα σχέδια στο Lotus Bloom Θεσσαλονίκης.",
     gallery_kicker: "Η Δουλειά μας",
     gallery_heading: "Μια ματιά στην τέχνη μας.",
-    gallery_lede: "Επιλεγμένες στιγμές από το studio μας — κάθε set σχεδιασμένο, ζωγραφισμένο και γυαλισμένο με αγάπη.",
+    gallery_lede:
+      "Επιλεγμένες στιγμές από το studio μας — κάθε set σχεδιασμένο, ζωγραφισμένο και γυαλισμένο με αγάπη.",
     gallery_cta: "Δείτε όλη τη γκαλερί",
     home_gallery_kicker: "Γκαλερί",
     home_gallery_title: "Πρόσφατες δημιουργίες, καθαρή αισθητική.",
@@ -195,12 +205,15 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (typeof document !== "undefined") document.documentElement.lang = lang === "gr" ? "el" : "en";
+    if (typeof document !== "undefined")
+      document.documentElement.lang = lang === "gr" ? "el" : "en";
   }, [lang]);
 
   const setLang = (l: Lang) => {
     setLangState(l);
-    try { localStorage.setItem("lang", l); } catch {}
+    try {
+      localStorage.setItem("lang", l);
+    } catch {}
   };
 
   const t = (key: keyof typeof translations.en) => translations[lang][key] ?? translations.en[key];

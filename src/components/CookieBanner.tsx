@@ -12,7 +12,9 @@ export function CookieBanner() {
   }, []);
 
   const decide = (v: "accepted" | "declined") => {
-    try { localStorage.setItem("cookie-consent", v); } catch {}
+    try {
+      localStorage.setItem("cookie-consent", v);
+    } catch {}
     setShow(false);
   };
 

@@ -11,8 +11,12 @@ export function Footer() {
             © {new Date().getFullYear()} Lotus Bloom · {t("footer_rights")}
           </div>
           <div className="flex gap-8 text-[10px] uppercase tracking-widest text-muted-foreground">
-            <a href="/privacy" className="hover:text-foreground">{t("footer_privacy")}</a>
-            <a href="/terms" className="hover:text-foreground">{t("footer_terms")}</a>
+            <a href="/privacy" className="hover:text-foreground">
+              {t("footer_privacy")}
+            </a>
+            <a href="/terms" className="hover:text-foreground">
+              {t("footer_terms")}
+            </a>
           </div>
         </div>
       </footer>
