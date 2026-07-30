@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -80,17 +81,36 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Lotus Bloom Nails & More — Beauty Salon in Thessaloniki" },
-      { name: "description", content: "Ινστιτούτο ομορφιάς στη Θεσσαλονίκη — μανικιούρ, πεντικιούρ, lash lift & φρύδια. Beauty salon in Thessaloniki for nails, lashes and brows." },
+      {
+        name: "description",
+        content:
+          "Ινστιτούτο ομορφιάς στη Θεσσαλονίκη — μανικιούρ, πεντικιούρ, lash lift & φρύδια. Beauty salon in Thessaloniki for nails, lashes and brows.",
+      },
       { name: "author", content: "Lotus Bloom" },
       { property: "og:title", content: "Lotus Bloom Nails & More — Beauty Salon in Thessaloniki" },
-      { property: "og:description", content: "Ινστιτούτο ομορφιάς στη Θεσσαλονίκη — μανικιούρ, πεντικιούρ, lash lift & φρύδια. Beauty salon in Thessaloniki for nails, lashes and brows." },
+      {
+        property: "og:description",
+        content:
+          "Ινστιτούτο ομορφιάς στη Θεσσαλονίκη — μανικιούρ, πεντικιούρ, lash lift & φρύδια. Beauty salon in Thessaloniki for nails, lashes and brows.",
+      },
       { property: "og:site_name", content: "Lotus Bloom" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "Lotus Bloom Nails & More — Beauty Salon in Thessaloniki" },
-      { name: "twitter:description", content: "Ινστιτούτο ομορφιάς στη Θεσσαλονίκη — μανικιούρ, πεντικιούρ, lash lift & φρύδια." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2bd88f6b-39da-419b-9336-95a791dec7e5/id-preview-97cb4848--5e8470cf-a216-49bb-8128-5c1df70c9541.lovable.app-1780482208143.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2bd88f6b-39da-419b-9336-95a791dec7e5/id-preview-97cb4848--5e8470cf-a216-49bb-8128-5c1df70c9541.lovable.app-1780482208143.png" },
+      {
+        name: "twitter:description",
+        content: "Ινστιτούτο ομορφιάς στη Θεσσαλονίκη — μανικιούρ, πεντικιούρ, lash lift & φρύδια.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2bd88f6b-39da-419b-9336-95a791dec7e5/id-preview-97cb4848--5e8470cf-a216-49bb-8128-5c1df70c9541.lovable.app-1780482208143.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2bd88f6b-39da-419b-9336-95a791dec7e5/id-preview-97cb4848--5e8470cf-a216-49bb-8128-5c1df70c9541.lovable.app-1780482208143.png",
+      },
     ],
     links: [
       {
@@ -116,6 +136,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         {children}
         <Scripts />
+        <Analytics />
       </body>
     </html>
   );
