@@ -11,15 +11,7 @@ export function Footer() {
             © {new Date().getFullYear()} Lotus Bloom · {t("footer_rights")}
           </div>
           <div className="flex flex-col items-center gap-2 text-[10px] uppercase tracking-widest text-muted-foreground md:items-end">
-            <a
-              href="https://gretagreta.eu"
-              target="_blank"
-              rel="noopener"
-              className="hover:text-foreground"
-            >
-              {t("footer_powered")} gretagreta.eu
-            </a>
-            <div className="flex gap-8">
+            <div className="flex gap-8 text-[10px] uppercase tracking-widest text-muted-foreground">
               <a href="/privacy" className="hover:text-foreground">
                 {t("footer_privacy")}
               </a>
@@ -30,6 +22,19 @@ export function Footer() {
           </div>
         </div>
       </footer>
+      <div className="py-4 px-6 border-t border-border bg-foreground/5">
+        <div className="max-w-7xl mx-auto text-center font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+          {t("footer_powered")}{" "}
+          <a
+            href="https://gretagreta.eu"
+            target="_blank"
+            rel="noopener"
+            className="underline underline-offset-4 hover:text-foreground transition-colors"
+          >
+            gretagreta.eu
+          </a>
+        </div>
+      </div>
     </>
   );
 }

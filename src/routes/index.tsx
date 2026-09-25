@@ -278,12 +278,12 @@ function Index() {
         <div className="max-w-7xl mx-auto text-center font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
           {t("footer_powered")}{" "}
           <a
-            href="https://devcraft.gr"
+            href="https://gretagreta.eu"
             target="_blank"
             rel="noopener"
             className="underline underline-offset-4 hover:text-foreground transition-colors"
           >
-            devcraft.gr
+            gretagreta.eu
           </a>
         </div>
       </div>
