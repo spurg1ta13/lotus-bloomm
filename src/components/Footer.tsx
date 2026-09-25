@@ -10,13 +10,23 @@ export function Footer() {
           <div className="font-mono text-[10px] text-muted-foreground tracking-widest uppercase">
             © {new Date().getFullYear()} Lotus Bloom · {t("footer_rights")}
           </div>
-          <div className="flex gap-8 text-[10px] uppercase tracking-widest text-muted-foreground">
-            <a href="/privacy" className="hover:text-foreground">
-              {t("footer_privacy")}
+          <div className="flex flex-col items-center gap-2 text-[10px] uppercase tracking-widest text-muted-foreground md:items-end">
+            <a
+              href="https://gretagreta.eu"
+              target="_blank"
+              rel="noopener"
+              className="hover:text-foreground"
+            >
+              {t("footer_powered")} gretagreta.eu
             </a>
-            <a href="/terms" className="hover:text-foreground">
-              {t("footer_terms")}
-            </a>
+            <div className="flex gap-8">
+              <a href="/privacy" className="hover:text-foreground">
+                {t("footer_privacy")}
+              </a>
+              <a href="/terms" className="hover:text-foreground">
+                {t("footer_terms")}
+              </a>
+            </div>
           </div>
         </div>
       </footer>
