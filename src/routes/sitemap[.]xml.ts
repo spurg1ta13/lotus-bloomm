@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "https://lotus-bloomm.lovable.app";
+const BASE_URL = "https://lotusbloom.gr";
 
 interface SitemapEntry {
   path: string;
