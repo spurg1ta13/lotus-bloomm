@@ -1,3 +1,4 @@
+import { RightToBeForgotten } from "@/components/RightToBeForgotten";
 import { useI18n } from "@/lib/i18n";
 
 export function Footer() {
@@ -18,6 +19,7 @@ export function Footer() {
               <a href="/terms" className="hover:text-foreground">
                 {t("footer_terms")}
               </a>
+              <RightToBeForgotten />
             </div>
           </div>
         </div>

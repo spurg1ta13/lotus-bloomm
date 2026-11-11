@@ -1,3 +1,4 @@
+import { RightToBeForgotten } from "@/components/RightToBeForgotten";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { Instagram, Facebook } from "lucide-react";
@@ -270,6 +271,7 @@ function Index() {
             <a href="/terms" className="hover:text-foreground">
               {t("footer_terms")}
             </a>
+            <RightToBeForgotten />
           </div>
         </div>
       </footer>
