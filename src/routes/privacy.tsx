@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { RightToBeForgotten } from "@/components/RightToBeForgotten";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
@@ -50,7 +51,9 @@ function Privacy() {
           <h2 className="font-display text-2xl text-foreground">Your rights</h2>
           <p>
             You may request access, rectification, or deletion of your personal data at any time by
-            writing to lotusbloomnails@gmail.com.
+            writing to lotusbloomnails@gmail.com. You can also erase your contact form data instantly
+            here:{" "}
+            <RightToBeForgotten className="underline underline-offset-4 text-foreground normal-case tracking-normal text-base" />
           </p>
           <h2 className="font-display text-2xl text-foreground">Contact</h2>
           <p>Lotus Bloom Nails & More — Thessaloniki, Greece — lotusbloomnails@gmail.com</p>

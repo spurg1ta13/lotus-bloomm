@@ -130,6 +130,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      anonymize_contact_phone: { Args: { _digits: string }; Returns: undefined }
       delete_email: {
         Args: { message_id: number; queue_name: string }
         Returns: boolean
